@@ -63,7 +63,7 @@ jobs:
             - name: executing remote ssh commands using ssh key
               uses: appleboy/ssh-action@master
               with:
-                host: zsceladna.thedevs.cz
+                host: zs-celadna.thedevs.cz
                 username: ${{ secrets.DEPLOY_USERNAME }}
                 key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-                script: cd /deployment/zsceladna && ./deploy-strapi.sh
+                script: cd /deployment/zs-celadna && ./deploy-strapi.sh

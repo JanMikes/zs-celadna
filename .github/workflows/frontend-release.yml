@@ -64,11 +64,11 @@ jobs:
             - docker
         environment:
             name: production
-            url: https://zsceladna.thedevs.cz
+            url: https://zs-celadna.thedevs.cz
         steps:
             -   uses: appleboy/ssh-action@master
                 with:
-                    host: zsceladna.thedevs.cz
+                    host: zs-celadna.thedevs.cz
                     username: ${{ secrets.DEPLOY_USERNAME }}
                     key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-                    script: cd /deployment/zsceladna && ./deploy.sh
+                    script: cd /deployment/zs-celadna && ./deploy.sh
