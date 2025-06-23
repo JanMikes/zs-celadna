@@ -1,0 +1,228 @@
+/* === Gogh Typeface === */
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Hairline.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-HairlineItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-ThinItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-BookItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-HeavyItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gogh';
+  src: url('/fonts/Gogh-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Make Gogh the default sans-serif font */
+:root {
+}
+
+body {
+    --bs-font-sans-serif: 'Gogh', sans-serif;
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-primary: #005E56;
+    --bs-primary-rgb: 0,94,86;
+    --bs-secondary: #A2C62C;
+    --bs-secondary-rgb: 162,198,44;
+    --bs-secondary-color-rgb: 244,152,51;
+    --bs-heading-color: var(--bs-primary);
+    --bs-link-color-rgb: var(--bs-primary);
+    --bs-breadcrumb-font-size: 12px;
+    background-color: #EDEDED;
+    padding-top: 56px; /* adjust to header size */
+}
+
+
+footer {
+    background-color: #005E56;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-image:
+        url('../images/footer-1.png'),
+        url('../images/footer-2.png'),
+        url('../images/footer-3.png'),
+        url('../images/footer-4.png');
+    background-position:
+        left bottom,
+        20% bottom,
+        65% calc(100% - 30px),
+        right 40px;
+    padding-bottom: 120px;
+}
+
+footer h5 {
+    background: var(--bs-secondary);
+    color: #fff;
+    display: inline-block;
+    padding: 4px;
+    font-size: 16px;
+}
+
+.bakalari-header-link {
+    display: inline-flex;
+    align-items: center;
+    line-height: 18px;
+}
+
+.bakalari-header-link .link {
+    background: var(--bs-secondary);
+    color: #fff;
+    padding: 5px 25px 5px 15px;
+    border-radius: 15px;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: bold;
+}
+
+.bakalari-header-link i {
+    font-size: 18px;
+    padding-right: 5px;
+}
+
+.bakalari-header-link .bakalari-img {
+    margin-left: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('../images/bakalari.png') center center no-repeat;
+    background-size: contain;
+}
+
+.content-wrapper {
+    background-repeat: no-repeat;
+    background-image:
+        url('../images/body-3.png'),
+        url('../images/body-1.png'),
+        url('../images/body-2.png');
+    background-position:
+        calc(100% - 30px) 75%,
+        right -130px,
+        left 30%;
+}

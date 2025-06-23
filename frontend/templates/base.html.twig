@@ -31,27 +31,120 @@
 
         {% block custom_styles %}{% endblock %}
     </head>
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="d-flex flex-column min-vh-100 {% block body_class %}{% endblock %}">
 
     {% block full_content %}
-        <header class="navbar navbar-expand-lg bg-light p-3 fixed-top">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <header>
+          <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top py-3">
+            <div class="container-fluid d-flex align-items-center">
+              <!-- Hamburger menu trigger -->
+              <button class="btn p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
-                        <twig:Menu />
-                    </ul>
-                </div>
+              <!-- Menu links (tablet and up) -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-none d-md-flex flex-row">
+                  <twig:Menu />
+              </ul>
+
+              <!-- Right-aligned link -->
+              <a class="nav-link ms-auto bakalari-header-link" href="#">
+                  <span class="link">
+                      <i class="bi-person-circle"></i>
+                      Přihlášení
+                  </span>
+                  <span class="bakalari-img"></span>
+              </a>
             </div>
+          </nav>
+
+          <!-- Offcanvas menu -->
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav">
+                  <twig:Menu />
+              </ul>
+            </div>
+          </div>
         </header>
 
-        {{ include('_flashes.html.twig') }}
+        <div class="content-wrapper flex-fill py-3">
+            {{ include('_flashes.html.twig') }}
 
-        {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer class="pt-5 mt-auto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="mb-3">Kontakty</h5>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                Ředitel
+                                Ing. Jiří Adámek
+                                reditel@zsceladna.cz
+                                +420 558 684 006
+                                +420 774 300 514
+                                IČO: 75028948
+                                číslo účtu: 18 14 18 130 / 0300
+                                ID datové schránky: dfnmkh3
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <p>
+                                    <strong>Zástupce ředitele školy pro 1. stupeň</strong><br>
+                                    Mgr. Lukáš Kovář<br>
+                                    kovar@zsceladna.cz<br>
+                                    +420 558 684 003<br>
+                                    +420 778 088 894
+                                </p>
+
+                                <p>
+                                    <strong>Zástupce ředitele školy pro 2. stupeň</strong><br>
+                                    Mgr. Barbora Dudková<br>
+                                    dudkova@zsceladna.cz<br>
+                                    +420 558 684 003<br>
+                                    +420 778 088 874
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-6">
+                        <h5 class="mb-3">Kde nás najdete</h5>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <p>
+                                    Základní škola Čeladná, p. o.<br>
+                                    Čeladná 551, PSČ 739 12
+                                </p>
+
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2588.742411089569!2d18.33610951269441!3d49.546013571314525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47138a9685cfcd83%3A0x7b4b9999212484db!2zWsOha2xhZG7DrSDFoWtvbGEgxIxlbGFkbsOh!5e0!3m2!1scs!2scz!4v1750701981448!5m2!1scs!2scz" width="300" height="200" style="border:0;max-width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                Ochrana soukromí
+                                GDPR
+                                Aktuality
+                                Kontakty
+                                Dotace
+                                Inspekční zpráva ČŠI
+                                Zpracování osobních údajů
+                                Prohlášení o přístupnosti
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
     {% endblock %}
 
     </body>
