@@ -668,6 +668,29 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
         },
         number
       >;
+    Komponenty_panel: Schema.Attribute.DynamicZone<
+      [
+        'komponenty.vizitky',
+        'komponenty.uredni-deska',
+        'komponenty.tlacitka',
+        'komponenty.tipy-na-vylet',
+        'komponenty.textove-pole',
+        'komponenty.terminy-akci',
+        'komponenty.soubory-ke-stazeni',
+        'komponenty.sekce-s-dlazdicema',
+        'komponenty.samosprava',
+        'komponenty.rozdelovnik',
+        'komponenty.program-kina',
+        'komponenty.pas-s-obrazkem',
+        'komponenty.pas-karet-s-argumenty',
+        'komponenty.obrazek',
+        'komponenty.nadpis',
+        'komponenty.karty',
+        'komponenty.galerie',
+        'komponenty.formular',
+        'komponenty.aktuality',
+      ]
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::sekce.sekce'> &
       Schema.Attribute.Private;
@@ -681,6 +704,8 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
     parent: Schema.Attribute.Relation<'oneToOne', 'api::sekce.sekce'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'Nazev'> & Schema.Attribute.Required;
+    Umisteni_panelu: Schema.Attribute.Enumeration<['Vpravo', 'Vlevo']> &
+      Schema.Attribute.DefaultTo<'Vpravo'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

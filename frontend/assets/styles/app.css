@@ -177,11 +177,15 @@ footer {
     padding-bottom: 120px;
 }
 
+footer a {
+    color: #fff;
+}
+
 footer h5 {
     background: var(--bs-secondary);
     color: #fff;
     display: inline-block;
-    padding: 4px;
+    padding: 5px 8px;
     font-size: 16px;
 }
 

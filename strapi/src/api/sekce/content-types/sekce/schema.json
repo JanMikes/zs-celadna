@@ -14,9 +14,9 @@
   "attributes": {
     "Nazev": {
       "type": "string",
+      "maxLength": 80,
       "required": true,
-      "unique": true,
-      "maxLength": 80
+      "unique": true
     },
     "slug": {
       "type": "uid",
@@ -25,6 +25,19 @@
     },
     "Meta_description": {
       "type": "string"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sekce.sekce"
+    },
+    "Umisteni_panelu": {
+      "type": "enumeration",
+      "default": "Vpravo",
+      "enum": [
+        "Vpravo",
+        "Vlevo"
+      ]
     },
     "Komponenty": {
       "type": "dynamiczone",
@@ -52,10 +65,29 @@
       "required": true,
       "min": 1
     },
-    "parent": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::sekce.sekce"
+    "Komponenty_panel": {
+      "type": "dynamiczone",
+      "components": [
+        "komponenty.vizitky",
+        "komponenty.uredni-deska",
+        "komponenty.tlacitka",
+        "komponenty.tipy-na-vylet",
+        "komponenty.textove-pole",
+        "komponenty.terminy-akci",
+        "komponenty.soubory-ke-stazeni",
+        "komponenty.sekce-s-dlazdicema",
+        "komponenty.samosprava",
+        "komponenty.rozdelovnik",
+        "komponenty.program-kina",
+        "komponenty.pas-s-obrazkem",
+        "komponenty.pas-karet-s-argumenty",
+        "komponenty.obrazek",
+        "komponenty.nadpis",
+        "komponenty.karty",
+        "komponenty.galerie",
+        "komponenty.formular",
+        "komponenty.aktuality"
+      ]
     }
   }
 }

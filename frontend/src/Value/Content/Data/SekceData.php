@@ -10,7 +10,9 @@ namespace CeladnaZS\Web\Value\Content\Data;
  *      Nazev: string,
  *      slug: string,
  *      Meta_description: string,
+ *      Umisteni_panelu: string,
  *      Komponenty: array<array{__component: string}>,
+ *      Komponenty_panel: array<array{__component: string}>,
  *      parent: null|array{slug: string},
  *  }
  */
@@ -24,6 +26,8 @@ readonly final class SekceData
         public string $slug,
         public string|null $Meta_description,
         public array $Komponenty,
+        public array $KomponentyPanel,
+        public string $UmisteniPanelu,
         public null|string $parentSlug,
     ) {
     }
@@ -38,6 +42,8 @@ readonly final class SekceData
             $data['slug'],
             $data['Meta_description'],
             [],
+            [],
+            '',
             $data['parent']['slug'] ?? null,
         );
     }
