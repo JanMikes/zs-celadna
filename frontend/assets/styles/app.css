@@ -289,12 +289,12 @@ h1 {
 }
 
 hr.hr {
-    border-color: #000;
+    border-color: var(--bs-primary);
     opacity: 1;
 }
 
 .hr-normal {
-    border-width: 2px !important;
+    border-width: 1px !important;
 }
 
 .hr-dotted {
@@ -305,7 +305,6 @@ hr.hr {
     text-decoration: none;
     background: var(--bs-secondary);
     padding: 9px 27px;
-    border-radius: 6px;
     color: #fff;
 }
 
