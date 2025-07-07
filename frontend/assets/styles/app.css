@@ -314,19 +314,22 @@ hr.hr {
 }
 
 .column-dlazdice {
-    width: 246px;
-    border: 2px solid var(--bs-primary);
+    width: 224px;
     padding: 20px 15px 15px 15px;
-    border-radius: 4px;
+    border-radius: 20px;
     font-weight: bold;
     text-decoration: none;
     color: var(--bs-primary);
     transition: all 0.3s;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.column-dlazdice .img-fluid {
+    max-width: 60%;
 }
 
 a.column-dlazdice:hover {
-    background: var(--bs-primary);
-    color: #fff;
+    background: #efefef;
 }
 
 .column-dlazdice .divider {

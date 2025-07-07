@@ -2,9 +2,11 @@
     {% for dlazdice in data.Dlazdice %}
         <twig:Odkaz data="{{ dlazdice.Odkaz }}" class="column-dlazdice align-items-center justify-content-center flex-wrap text-center">
             {% if dlazdice.Ikona %}
-                <img src="{{ dlazdice.Ikona.url }}" class="img-fluid mb-3">
+                <div>
+                    <img src="{{ dlazdice.Ikona.url }}" class="img-fluid mx-auto mb-3">
+                </div>
             {% endif %}
-            <span class="divider"></span>
+            {# <span class="divider"></span> #}
             {{ dlazdice.Nadpis_dlazdice }}
         </twig:Odkaz>
     {% endfor %}
