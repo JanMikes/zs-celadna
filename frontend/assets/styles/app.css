@@ -527,3 +527,12 @@ p img {
 .card-icons img + img {
     margin-left: 5px;
 }
+
+.section-content-wrapper > h2:first-child,
+.side-panel > h2:first-child,
+.section-content-wrapper > h3:first-child,
+.side-panel > h3:first-child,
+.section-content-wrapper > h4:first-child,
+.side-panel > h4:first-child{
+    margin-top: 0 !important;
+}
