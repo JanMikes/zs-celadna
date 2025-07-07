@@ -26,8 +26,8 @@ readonly final class SekceData
         public string $slug,
         public string|null $Meta_description,
         public array $Komponenty,
-        public array $KomponentyPanel,
-        public string $UmisteniPanelu,
+        public array $Komponenty_panel,
+        public string $Umisteni_panelu,
         public null|string $parentSlug,
     ) {
     }
@@ -54,6 +54,7 @@ readonly final class SekceData
     public static function createFromStrapiResponse(array $data): self
     {
         $components = [];
+        $componentsPanel = [];
 
         foreach ($data['Komponenty'] as $component) {
             $components[] = match($component['__component']) {
@@ -80,12 +81,39 @@ readonly final class SekceData
             };
         }
 
+        foreach ($data['Komponenty_panel'] as $component) {
+            $componentsPanel[] = match($component['__component']) {
+                'komponenty.nadpis' => new Component('Nadpis', NadpisComponentData::createFromStrapiResponse($component)),
+                'komponenty.textove-pole' => new Component('TextovePole', TextovePoleComponentData::createFromStrapiResponse($component)),
+                'komponenty.aktuality' => new Component('Aktuality', AktualityComponentData::createFromStrapiResponse($component)),
+                'komponenty.formular' => new Component('Formular', FormularComponentData::createFromStrapiResponse($component)),
+                'komponenty.galerie' => new Component('Galerie', GalerieComponentData::createFromStrapiResponse($component)),
+                'komponenty.obrazek' => new Component('Obrazek', ObrazekComponentData::createFromStrapiResponse($component)),
+                'komponenty.rozdelovnik' => new Component('Rozdelovnik', RozdelovnikComponentData::createFromStrapiResponse($component)),
+                'komponenty.samosprava' => new Component('Samosprava', SamospravaComponentData::createFromStrapiResponse($component)),
+                'komponenty.sekce-s-dlazdicema' => new Component('SekceSDlazdicema', SekceSDlazdicemaComponentData::createFromStrapiResponse($component)),
+                'komponenty.soubory-ke-stazeni' => new Component('SouboryKeStazeni', SouboryKeStazeniComponentData::createFromStrapiResponse($component)),
+                'komponenty.tlacitka' => new Component('Tlacitka', TlacitkaComponentData::createFromStrapiResponse($component)),
+                'komponenty.uredni-deska' => new Component('UredniDeska', UredniDeskaComponentData::createFromStrapiResponse($component)),
+                'komponenty.terminy-akci' => new Component('TerminyAkci', TerminyAkciComponentData::createFromStrapiResponse($component)),
+                'komponenty.vizitky' => new Component('Vizitky', VizitkyComponentData::createFromStrapiResponse($component)),
+                'komponenty.karty' => new Component('Karty', KartyComponentData::createFromStrapiResponse($component)),
+                'komponenty.program-kina' => new Component('ProgramKina', ProgramKinaComponentData::createFromStrapiResponse($component)),
+                'komponenty.pas-s-obrazkem' => new Component('PasSObrazkem', PasSObrazkemComponentData::createFromStrapiResponse($component)),
+                'komponenty.pas-karet-s-argumenty' => new Component('PasKaretSArgumenty', PasKaretSArgumentyComponentData::createFromStrapiResponse($component)),
+                'komponenty.tipy-na-vylet' => new Component('TipyNaVylet', TipyNaVyletComponentData::createFromStrapiResponse($component)),
+                default => throw new \Exception('Unknown component ' . $component['__component']),
+            };
+        }
+
         return new self(
-            $data['Nazev'],
-            $data['slug'],
-            $data['Meta_description'],
-            $components,
-            null,
+            Nazev: $data['Nazev'],
+            slug: $data['slug'],
+            Meta_description: $data['Meta_description'],
+            Komponenty: $components,
+            Komponenty_panel: $componentsPanel,
+            Umisteni_panelu: $data['Umisteni_panelu'],
+            parentSlug: null,
         );
     }
 }
