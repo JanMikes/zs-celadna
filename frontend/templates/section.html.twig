@@ -27,7 +27,7 @@
             </div>
 
             {% if sekce.Komponenty_panel %}
-                <div class="col-5">
+                <div class="col-5 side-panel">
                     {% for komponenta in sekce.Komponenty_panel %}
                         {{ component(komponenta.type, { data: komponenta.data }) }}
                     {% endfor %}

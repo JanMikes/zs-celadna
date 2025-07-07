@@ -303,7 +303,7 @@ hr.hr {
 
 .button-style-1 a {
     text-decoration: none;
-    background: #1D5EFF;
+    background: var(--bs-secondary);
     padding: 9px 27px;
     border-radius: 6px;
     color: #fff;
