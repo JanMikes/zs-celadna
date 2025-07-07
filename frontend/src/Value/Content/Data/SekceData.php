@@ -20,6 +20,7 @@ readonly final class SekceData
 {
     /**
      * @param array<Component> $Komponenty
+     * @param array<Component> $Komponenty_panel
      */
     public function __construct(
         public string $Nazev,
