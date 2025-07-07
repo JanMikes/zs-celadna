@@ -155,6 +155,8 @@ body {
     --bs-heading-color: var(--bs-primary);
     --bs-link-color-rgb: var(--bs-primary);
     --bs-breadcrumb-font-size: 12px;
+    --bs-link-hover-color: var(--bs-primary);
+    --bs-link-hover-color-rgb: var(--bs-primary-rgb);
     background-color: #EDEDED;
     padding-top: 56px; /* adjust to header size */
 }
