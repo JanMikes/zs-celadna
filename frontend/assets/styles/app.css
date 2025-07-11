@@ -532,10 +532,17 @@ p img {
 }
 
 .section-content-wrapper > h2:first-child,
-.side-panel > h2:first-child,
 .section-content-wrapper > h3:first-child,
-.side-panel > h3:first-child,
 .section-content-wrapper > h4:first-child,
-.side-panel > h4:first-child{
+.section-content-wrapper > .my-5:first-child,
+.side-panel > h2:first-child,
+.side-panel > h3:first-child,
+.side-panel > h4:first-child,
+.side-panel > .my-5:first-child {
     margin-top: 0 !important;
+}
+
+.section-content-wrapper > .my-5:first-child,
+.side-panel > .my-5:first-child {
+    margin-bottom: 0 !important;
 }
