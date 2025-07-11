@@ -57,54 +57,33 @@ readonly final class SekceData
         $components = [];
         $componentsPanel = [];
 
-        foreach ($data['Komponenty'] as $component) {
-            $components[] = match($component['__component']) {
-                'komponenty.nadpis' => new Component('Nadpis', NadpisComponentData::createFromStrapiResponse($component)),
-                'komponenty.textove-pole' => new Component('TextovePole', TextovePoleComponentData::createFromStrapiResponse($component)),
-                'komponenty.aktuality' => new Component('Aktuality', AktualityComponentData::createFromStrapiResponse($component)),
-                'komponenty.formular' => new Component('Formular', FormularComponentData::createFromStrapiResponse($component)),
-                'komponenty.galerie' => new Component('Galerie', GalerieComponentData::createFromStrapiResponse($component)),
-                'komponenty.obrazek' => new Component('Obrazek', ObrazekComponentData::createFromStrapiResponse($component)),
-                'komponenty.rozdelovnik' => new Component('Rozdelovnik', RozdelovnikComponentData::createFromStrapiResponse($component)),
-                'komponenty.samosprava' => new Component('Samosprava', SamospravaComponentData::createFromStrapiResponse($component)),
-                'komponenty.sekce-s-dlazdicema' => new Component('SekceSDlazdicema', SekceSDlazdicemaComponentData::createFromStrapiResponse($component)),
-                'komponenty.soubory-ke-stazeni' => new Component('SouboryKeStazeni', SouboryKeStazeniComponentData::createFromStrapiResponse($component)),
-                'komponenty.tlacitka' => new Component('Tlacitka', TlacitkaComponentData::createFromStrapiResponse($component)),
-                'komponenty.uredni-deska' => new Component('UredniDeska', UredniDeskaComponentData::createFromStrapiResponse($component)),
-                'komponenty.terminy-akci' => new Component('TerminyAkci', TerminyAkciComponentData::createFromStrapiResponse($component)),
-                'komponenty.vizitky' => new Component('Vizitky', VizitkyComponentData::createFromStrapiResponse($component)),
-                'komponenty.karty' => new Component('Karty', KartyComponentData::createFromStrapiResponse($component)),
-                'komponenty.program-kina' => new Component('ProgramKina', ProgramKinaComponentData::createFromStrapiResponse($component)),
-                'komponenty.pas-s-obrazkem' => new Component('PasSObrazkem', PasSObrazkemComponentData::createFromStrapiResponse($component)),
-                'komponenty.pas-karet-s-argumenty' => new Component('PasKaretSArgumenty', PasKaretSArgumentyComponentData::createFromStrapiResponse($component)),
-                'komponenty.tipy-na-vylet' => new Component('TipyNaVylet', TipyNaVyletComponentData::createFromStrapiResponse($component)),
-                default => throw new \Exception('Unknown component ' . $component['__component']),
+        foreach ($data['Komponenty'] as $componentInfo) {
+            $component = match ($componentInfo['__component']) {
+                'komponenty.nadpis' => new Component('Nadpis', NadpisComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.textove-pole' => new Component('TextovePole', TextovePoleComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.aktuality' => new Component('Aktuality', AktualityComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.formular' => new Component('Formular', FormularComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.galerie' => new Component('Galerie', GalerieComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.obrazek' => new Component('Obrazek', ObrazekComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.rozdelovnik' => new Component('Rozdelovnik', RozdelovnikComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.samosprava' => new Component('Samosprava', SamospravaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.sekce-s-dlazdicema' => new Component('SekceSDlazdicema', SekceSDlazdicemaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.soubory-ke-stazeni' => new Component('SouboryKeStazeni', SouboryKeStazeniComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.tlacitka' => new Component('Tlacitka', TlacitkaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.uredni-deska' => new Component('UredniDeska', UredniDeskaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.terminy-akci' => new Component('TerminyAkci', TerminyAkciComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.vizitky' => new Component('Vizitky', VizitkyComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.karty' => new Component('Karty', KartyComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.program-kina' => new Component('ProgramKina', ProgramKinaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.pas-s-obrazkem' => new Component('PasSObrazkem', PasSObrazkemComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.pas-karet-s-argumenty' => new Component('PasKaretSArgumenty', PasKaretSArgumentyComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.tipy-na-vylet' => new Component('TipyNaVylet', TipyNaVyletComponentData::createFromStrapiResponse($componentInfo)),
+                default => null,
             };
-        }
 
-        foreach ($data['Komponenty_panel'] as $component) {
-            $componentsPanel[] = match($component['__component']) {
-                'komponenty.nadpis' => new Component('Nadpis', NadpisComponentData::createFromStrapiResponse($component)),
-                'komponenty.textove-pole' => new Component('TextovePole', TextovePoleComponentData::createFromStrapiResponse($component)),
-                'komponenty.aktuality' => new Component('Aktuality', AktualityComponentData::createFromStrapiResponse($component)),
-                'komponenty.formular' => new Component('Formular', FormularComponentData::createFromStrapiResponse($component)),
-                'komponenty.galerie' => new Component('Galerie', GalerieComponentData::createFromStrapiResponse($component)),
-                'komponenty.obrazek' => new Component('Obrazek', ObrazekComponentData::createFromStrapiResponse($component)),
-                'komponenty.rozdelovnik' => new Component('Rozdelovnik', RozdelovnikComponentData::createFromStrapiResponse($component)),
-                'komponenty.samosprava' => new Component('Samosprava', SamospravaComponentData::createFromStrapiResponse($component)),
-                'komponenty.sekce-s-dlazdicema' => new Component('SekceSDlazdicema', SekceSDlazdicemaComponentData::createFromStrapiResponse($component)),
-                'komponenty.soubory-ke-stazeni' => new Component('SouboryKeStazeni', SouboryKeStazeniComponentData::createFromStrapiResponse($component)),
-                'komponenty.tlacitka' => new Component('Tlacitka', TlacitkaComponentData::createFromStrapiResponse($component)),
-                'komponenty.uredni-deska' => new Component('UredniDeska', UredniDeskaComponentData::createFromStrapiResponse($component)),
-                'komponenty.terminy-akci' => new Component('TerminyAkci', TerminyAkciComponentData::createFromStrapiResponse($component)),
-                'komponenty.vizitky' => new Component('Vizitky', VizitkyComponentData::createFromStrapiResponse($component)),
-                'komponenty.karty' => new Component('Karty', KartyComponentData::createFromStrapiResponse($component)),
-                'komponenty.program-kina' => new Component('ProgramKina', ProgramKinaComponentData::createFromStrapiResponse($component)),
-                'komponenty.pas-s-obrazkem' => new Component('PasSObrazkem', PasSObrazkemComponentData::createFromStrapiResponse($component)),
-                'komponenty.pas-karet-s-argumenty' => new Component('PasKaretSArgumenty', PasKaretSArgumentyComponentData::createFromStrapiResponse($component)),
-                'komponenty.tipy-na-vylet' => new Component('TipyNaVylet', TipyNaVyletComponentData::createFromStrapiResponse($component)),
-                default => throw new \Exception('Unknown component ' . $component['__component']),
-            };
+            if ($component !== null) {
+                $components[] = $component;
+            }
         }
 
         return new self(
@@ -112,7 +91,7 @@ readonly final class SekceData
             slug: $data['slug'],
             Meta_description: $data['Meta_description'],
             Komponenty: $components,
-            Komponenty_panel: $componentsPanel,
+            Komponenty_panel: [],
             Umisteni_panelu: $data['Umisteni_panelu'],
             parentSlug: null,
         );
