@@ -6,14 +6,13 @@ namespace CeladnaZS\Web\Value\Content\Data;
 
 /**
  * @phpstan-import-type TelefonDataArray from TelefonData
- * @phpstan-import-type LekarDataArray from LekarData
  * @phpstan-type VizitkaDataArray array{
  *     Adresa: null|string,
  *     Odkaz_na_mapu: null|string,
  *     Odkaz: null|string,
  *     Oteviraci_doba: null|string,
  *     Telefony: array<TelefonDataArray>,
- *     Lekari: array<LekarDataArray>,
+ *     lides: array<string>,
  * }
  */
 readonly final class VizitkaData
@@ -26,8 +25,8 @@ readonly final class VizitkaData
         public null|string $OdkazNaMapu,
         public null|string $Odkaz,
         public null|string $OteviraciDoba,
-        /** @var array<LekarData> */
-        public array $Lekari,
+        /** @var array<string> */
+        public array $lides,
         /** @var array<TelefonData> */
         public array $Telefony,
     ) {}
@@ -42,7 +41,7 @@ readonly final class VizitkaData
             OdkazNaMapu: $data['Odkaz_na_mapu'],
             Odkaz: $data['Odkaz'],
             OteviraciDoba: $data['Oteviraci_doba'],
-            Lekari: LekarData::createManyFromStrapiResponse($data['Lekari']),
+            lides: [],
             Telefony: TelefonData::createManyFromStrapiResponse($data['Telefony']),
         );
     }

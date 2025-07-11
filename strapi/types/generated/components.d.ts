@@ -149,17 +149,6 @@ export interface ElementyKartaTipNaVylet extends Struct.ComponentSchema {
   };
 }
 
-export interface ElementyLekar extends Struct.ComponentSchema {
-  collectionName: 'components_elementy_lekar';
-  info: {
-    displayName: 'L\u00E9ka\u0159';
-    icon: 'wheelchair';
-  };
-  attributes: {
-    Jmeno: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface ElementyObrazekGalerie extends Struct.ComponentSchema {
   collectionName: 'components_elementy_obrazek_galeries';
   info: {
@@ -321,7 +310,6 @@ export interface ElementyVizitka extends Struct.ComponentSchema {
   };
   attributes: {
     Adresa: Schema.Attribute.String;
-    Lekari: Schema.Attribute.Component<'elementy.lekar', true>;
     Odkaz: Schema.Attribute.String;
     Odkaz_na_mapu: Schema.Attribute.String;
     Oteviraci_doba: Schema.Attribute.Text;
@@ -359,6 +347,17 @@ export interface KomponentyAktuality extends Struct.ComponentSchema {
         number
       > &
       Schema.Attribute.DefaultTo<3>;
+  };
+}
+
+export interface KomponentyAlert extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_alerts';
+  info: {
+    displayName: 'Alert';
+    icon: 'bell';
+  };
+  attributes: {
+    Text: Schema.Attribute.RichText;
   };
 }
 
@@ -677,6 +676,7 @@ export interface KomponentyVizitky extends Struct.ComponentSchema {
     icon: 'briefcase';
   };
   attributes: {
+    lides: Schema.Attribute.Relation<'oneToMany', 'api::lide.lide'>;
     Vizitky: Schema.Attribute.Component<'elementy.vizitka', true>;
   };
 }
@@ -694,7 +694,6 @@ declare module '@strapi/strapi' {
       'elementy.karta': ElementyKarta;
       'elementy.karta-s-argumenty': ElementyKartaSArgumenty;
       'elementy.karta-tip-na-vylet': ElementyKartaTipNaVylet;
-      'elementy.lekar': ElementyLekar;
       'elementy.obrazek-galerie': ElementyObrazekGalerie;
       'elementy.odkaz': ElementyOdkaz;
       'elementy.organizace-skolniho-roku-polozka': ElementyOrganizaceSkolnihoRokuPolozka;
@@ -707,6 +706,7 @@ declare module '@strapi/strapi' {
       'elementy.vizitka': ElementyVizitka;
       'elementy.vyber-z-moznosti': ElementyVyberZMoznosti;
       'komponenty.aktuality': KomponentyAktuality;
+      'komponenty.alert': KomponentyAlert;
       'komponenty.bakalari': KomponentyBakalari;
       'komponenty.faq': KomponentyFaq;
       'komponenty.filtr-tagu': KomponentyFiltrTagu;
