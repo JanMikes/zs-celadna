@@ -10,11 +10,6 @@
       "type": "component",
       "component": "elementy.vizitka",
       "repeatable": true
-    },
-    "lides": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::lide.lide"
     }
   }
 }

@@ -277,10 +277,11 @@ export interface ElementyTerminAkce extends Struct.ComponentSchema {
     icon: 'calendar';
   };
   attributes: {
+    Fotka: Schema.Attribute.Media<'images'>;
+    Galerie: Schema.Attribute.Component<'komponenty.galerie', false>;
     Nazev: Schema.Attribute.String;
     Termin: Schema.Attribute.DateTime & Schema.Attribute.Required;
-    Zaznam: Schema.Attribute.String;
-    Zivy_prenos: Schema.Attribute.String;
+    Text: Schema.Attribute.RichText;
   };
 }
 
@@ -310,10 +311,14 @@ export interface ElementyVizitka extends Struct.ComponentSchema {
   };
   attributes: {
     Adresa: Schema.Attribute.String;
+    Email: Schema.Attribute.Email;
+    Fotka: Schema.Attribute.Media<'images'>;
+    lides: Schema.Attribute.Relation<'oneToMany', 'api::lide.lide'>;
     Nadpis_oteviraci_doby: Schema.Attribute.String;
     Odkaz: Schema.Attribute.String;
     Odkaz_na_mapu: Schema.Attribute.String;
     Oteviraci_doba: Schema.Attribute.Text;
+    Poznamka: Schema.Attribute.RichText;
     Telefony: Schema.Attribute.Component<'elementy.telefon', true>;
   };
 }
@@ -677,7 +682,6 @@ export interface KomponentyVizitky extends Struct.ComponentSchema {
     icon: 'briefcase';
   };
   attributes: {
-    lides: Schema.Attribute.Relation<'oneToMany', 'api::lide.lide'>;
     Vizitky: Schema.Attribute.Component<'elementy.vizitka', true>;
   };
 }
