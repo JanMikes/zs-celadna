@@ -659,6 +659,8 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
         'komponenty.pas-s-obrazkem',
         'komponenty.pas-karet-s-argumenty',
         'komponenty.tipy-na-vylet',
+        'komponenty.historie',
+        'komponenty.faq',
       ]
     > &
       Schema.Attribute.Required &
@@ -689,6 +691,8 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
         'komponenty.galerie',
         'komponenty.formular',
         'komponenty.aktuality',
+        'komponenty.historie',
+        'komponenty.faq',
       ]
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

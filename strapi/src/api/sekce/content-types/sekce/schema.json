@@ -60,7 +60,9 @@
         "komponenty.karty",
         "komponenty.pas-s-obrazkem",
         "komponenty.pas-karet-s-argumenty",
-        "komponenty.tipy-na-vylet"
+        "komponenty.tipy-na-vylet",
+        "komponenty.historie",
+        "komponenty.faq"
       ],
       "required": true,
       "min": 1
@@ -86,7 +88,9 @@
         "komponenty.karty",
         "komponenty.galerie",
         "komponenty.formular",
-        "komponenty.aktuality"
+        "komponenty.aktuality",
+        "komponenty.historie",
+        "komponenty.faq"
       ]
     }
   }
