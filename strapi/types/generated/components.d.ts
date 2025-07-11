@@ -51,6 +51,18 @@ export interface ElementyDlazdice extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementyFaqPolozka extends Struct.ComponentSchema {
+  collectionName: 'components_elementy_faq_polozkas';
+  info: {
+    displayName: 'FAQ - polo\u017Eka';
+    icon: 'discuss';
+  };
+  attributes: {
+    Odpoved: Schema.Attribute.RichText & Schema.Attribute.Required;
+    Otazka: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementyFilm extends Struct.ComponentSchema {
   collectionName: 'components_elementy_films';
   info: {
@@ -63,6 +75,19 @@ export interface ElementyFilm extends Struct.ComponentSchema {
     Obrazek: Schema.Attribute.Media<'images' | 'files'>;
     Popis: Schema.Attribute.String;
     Vstupne: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ElementyHistoriePolozka extends Struct.ComponentSchema {
+  collectionName: 'components_elementy_historie_polozkas';
+  info: {
+    displayName: 'Historie - Polo\u017Eka';
+    icon: 'globe';
+  };
+  attributes: {
+    Fotka: Schema.Attribute.Media<'images'>;
+    Nadpis: Schema.Attribute.String & Schema.Attribute.Required;
+    Text: Schema.Attribute.RichText;
   };
 }
 
@@ -324,6 +349,17 @@ export interface KomponentyAktuality extends Struct.ComponentSchema {
   };
 }
 
+export interface KomponentyFaq extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'discuss';
+  };
+  attributes: {
+    FAQ: Schema.Attribute.Component<'elementy.faq-polozka', true>;
+  };
+}
+
 export interface KomponentyFormular extends Struct.ComponentSchema {
   collectionName: 'components_komponenty_formular';
   info: {
@@ -355,6 +391,17 @@ export interface KomponentyGalerie extends Struct.ComponentSchema {
         number
       > &
       Schema.Attribute.DefaultTo<6>;
+  };
+}
+
+export interface KomponentyHistorie extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_histories';
+  info: {
+    displayName: 'Historie';
+    icon: 'earth';
+  };
+  attributes: {
+    Historie: Schema.Attribute.Component<'elementy.historie-polozka', true>;
   };
 }
 
@@ -595,7 +642,9 @@ declare module '@strapi/strapi' {
       'elementy.clovek-samospravy': ElementyClovekSamospravy;
       'elementy.datum': ElementyDatum;
       'elementy.dlazdice': ElementyDlazdice;
+      'elementy.faq-polozka': ElementyFaqPolozka;
       'elementy.film': ElementyFilm;
+      'elementy.historie-polozka': ElementyHistoriePolozka;
       'elementy.karta': ElementyKarta;
       'elementy.karta-s-argumenty': ElementyKartaSArgumenty;
       'elementy.karta-tip-na-vylet': ElementyKartaTipNaVylet;
@@ -611,8 +660,10 @@ declare module '@strapi/strapi' {
       'elementy.vizitka': ElementyVizitka;
       'elementy.vyber-z-moznosti': ElementyVyberZMoznosti;
       'komponenty.aktuality': KomponentyAktuality;
+      'komponenty.faq': KomponentyFaq;
       'komponenty.formular': KomponentyFormular;
       'komponenty.galerie': KomponentyGalerie;
+      'komponenty.historie': KomponentyHistorie;
       'komponenty.karty': KomponentyKarty;
       'komponenty.nadpis': KomponentyNadpis;
       'komponenty.obrazek': KomponentyObrazek;
