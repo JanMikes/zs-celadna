@@ -13,6 +13,9 @@
     "Odkaz": {
       "type": "string"
     },
+    "Nadpis_oteviraci_doby": {
+      "type": "string"
+    },
     "Oteviraci_doba": {
       "type": "text"
     },

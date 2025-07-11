@@ -1,4 +1,4 @@
-<div data-controller="gallery" class="mt-2 mb-5">
+<div data-controller="gallery" class="my-5">
     <div class="row row-cols-6 g-3">
         {% for obrazek in data.Obrazek %}
             <div class="col {{ loop.index > data.Pocet_zobrazenych ? 'd-none' }}" data-gallery-target="item">

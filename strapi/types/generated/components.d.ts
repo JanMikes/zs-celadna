@@ -310,6 +310,7 @@ export interface ElementyVizitka extends Struct.ComponentSchema {
   };
   attributes: {
     Adresa: Schema.Attribute.String;
+    Nadpis_oteviraci_doby: Schema.Attribute.String;
     Odkaz: Schema.Attribute.String;
     Odkaz_na_mapu: Schema.Attribute.String;
     Oteviraci_doba: Schema.Attribute.Text;
