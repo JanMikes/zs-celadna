@@ -187,6 +187,19 @@ export interface ElementyOdkaz extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementyOrganizaceSkolnihoRokuPolozka
+  extends Struct.ComponentSchema {
+  collectionName: 'components_elementy_organizace_skolniho_roku_polozkas';
+  info: {
+    displayName: 'Organizace \u0161koln\u00EDho roku - polo\u017Eka';
+    icon: 'clock';
+  };
+  attributes: {
+    Nadpis: Schema.Attribute.String & Schema.Attribute.Required;
+    Text: Schema.Attribute.Text;
+  };
+}
+
 export interface ElementyPoleFormulare extends Struct.ComponentSchema {
   collectionName: 'components_elementy_pole_formulares';
   info: {
@@ -349,6 +362,15 @@ export interface KomponentyAktuality extends Struct.ComponentSchema {
   };
 }
 
+export interface KomponentyBakalari extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_bakalaris';
+  info: {
+    displayName: 'Bakal\u00E1\u0159i';
+    icon: 'attachment';
+  };
+  attributes: {};
+}
+
 export interface KomponentyFaq extends Struct.ComponentSchema {
   collectionName: 'components_komponenty_faqs';
   info: {
@@ -358,6 +380,15 @@ export interface KomponentyFaq extends Struct.ComponentSchema {
   attributes: {
     FAQ: Schema.Attribute.Component<'elementy.faq-polozka', true>;
   };
+}
+
+export interface KomponentyFiltrTagu extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_filtr_tagu';
+  info: {
+    displayName: 'Filtr tag\u016F';
+    icon: 'attachment';
+  };
+  attributes: {};
 }
 
 export interface KomponentyFormular extends Struct.ComponentSchema {
@@ -447,6 +478,21 @@ export interface KomponentyObrazek extends Struct.ComponentSchema {
         },
         number
       >;
+  };
+}
+
+export interface KomponentyOrganizaceSkolnihoRoku
+  extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_organizace_skolniho_rokus';
+  info: {
+    displayName: 'Organizace \u0161koln\u00EDho roku';
+    icon: 'clock';
+  };
+  attributes: {
+    Polozky: Schema.Attribute.Component<
+      'elementy.organizace-skolniho-roku-polozka',
+      true
+    >;
   };
 }
 
@@ -651,6 +697,7 @@ declare module '@strapi/strapi' {
       'elementy.lekar': ElementyLekar;
       'elementy.obrazek-galerie': ElementyObrazekGalerie;
       'elementy.odkaz': ElementyOdkaz;
+      'elementy.organizace-skolniho-roku-polozka': ElementyOrganizaceSkolnihoRokuPolozka;
       'elementy.pole-formulare': ElementyPoleFormulare;
       'elementy.pole-formulare-s-moznostmi': ElementyPoleFormulareSMoznostmi;
       'elementy.soubor': ElementySoubor;
@@ -660,13 +707,16 @@ declare module '@strapi/strapi' {
       'elementy.vizitka': ElementyVizitka;
       'elementy.vyber-z-moznosti': ElementyVyberZMoznosti;
       'komponenty.aktuality': KomponentyAktuality;
+      'komponenty.bakalari': KomponentyBakalari;
       'komponenty.faq': KomponentyFaq;
+      'komponenty.filtr-tagu': KomponentyFiltrTagu;
       'komponenty.formular': KomponentyFormular;
       'komponenty.galerie': KomponentyGalerie;
       'komponenty.historie': KomponentyHistorie;
       'komponenty.karty': KomponentyKarty;
       'komponenty.nadpis': KomponentyNadpis;
       'komponenty.obrazek': KomponentyObrazek;
+      'komponenty.organizace-skolniho-roku': KomponentyOrganizaceSkolnihoRoku;
       'komponenty.pas-karet-s-argumenty': KomponentyPasKaretSArgumenty;
       'komponenty.pas-s-obrazkem': KomponentyPasSObrazkem;
       'komponenty.program-kina': KomponentyProgramKina;

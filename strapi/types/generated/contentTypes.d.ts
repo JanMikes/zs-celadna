@@ -417,6 +417,62 @@ export interface ApiAktualityAktuality extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBocniPanelBocniPanel extends Struct.CollectionTypeSchema {
+  collectionName: 'bocni_panels';
+  info: {
+    displayName: 'Bo\u010Dn\u00ED panel';
+    pluralName: 'bocni-panels';
+    singularName: 'bocni-panel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    komponenty: Schema.Attribute.DynamicZone<
+      [
+        'komponenty.vizitky',
+        'komponenty.uredni-deska',
+        'komponenty.tlacitka',
+        'komponenty.tipy-na-vylet',
+        'komponenty.textove-pole',
+        'komponenty.terminy-akci',
+        'komponenty.soubory-ke-stazeni',
+        'komponenty.sekce-s-dlazdicema',
+        'komponenty.samosprava',
+        'komponenty.rozdelovnik',
+        'komponenty.program-kina',
+        'komponenty.pas-s-obrazkem',
+        'komponenty.pas-karet-s-argumenty',
+        'komponenty.obrazek',
+        'komponenty.nadpis',
+        'komponenty.karty',
+        'komponenty.historie',
+        'komponenty.galerie',
+        'komponenty.formular',
+        'komponenty.faq',
+        'komponenty.aktuality',
+        'komponenty.organizace-skolniho-roku',
+        'komponenty.filtr-tagu',
+        'komponenty.bakalari',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::bocni-panel.bocni-panel'
+    > &
+      Schema.Attribute.Private;
+    Nazev: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFormularFormular extends Struct.CollectionTypeSchema {
   collectionName: 'formulars';
   info: {
@@ -635,6 +691,10 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    bocni_panel: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::bocni-panel.bocni-panel'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -661,6 +721,7 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
         'komponenty.tipy-na-vylet',
         'komponenty.historie',
         'komponenty.faq',
+        'komponenty.organizace-skolniho-roku',
       ]
     > &
       Schema.Attribute.Required &
@@ -670,31 +731,6 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
         },
         number
       >;
-    Komponenty_panel: Schema.Attribute.DynamicZone<
-      [
-        'komponenty.vizitky',
-        'komponenty.uredni-deska',
-        'komponenty.tlacitka',
-        'komponenty.tipy-na-vylet',
-        'komponenty.textove-pole',
-        'komponenty.terminy-akci',
-        'komponenty.soubory-ke-stazeni',
-        'komponenty.sekce-s-dlazdicema',
-        'komponenty.samosprava',
-        'komponenty.rozdelovnik',
-        'komponenty.program-kina',
-        'komponenty.pas-s-obrazkem',
-        'komponenty.pas-karet-s-argumenty',
-        'komponenty.obrazek',
-        'komponenty.nadpis',
-        'komponenty.karty',
-        'komponenty.galerie',
-        'komponenty.formular',
-        'komponenty.aktuality',
-        'komponenty.historie',
-        'komponenty.faq',
-      ]
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::sekce.sekce'> &
       Schema.Attribute.Private;
@@ -1301,6 +1337,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::aktuality.aktuality': ApiAktualityAktuality;
+      'api::bocni-panel.bocni-panel': ApiBocniPanelBocniPanel;
       'api::formular.formular': ApiFormularFormular;
       'api::ikonky.ikonky': ApiIkonkyIkonky;
       'api::kalendar-akci.kalendar-akci': ApiKalendarAkciKalendarAkci;
