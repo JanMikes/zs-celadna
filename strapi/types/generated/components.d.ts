@@ -452,6 +452,17 @@ export interface KomponentyKarty extends Struct.ComponentSchema {
   };
 }
 
+export interface KomponentyMapa extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_mapas';
+  info: {
+    displayName: 'Mapa';
+    icon: 'earth';
+  };
+  attributes: {
+    URL: Schema.Attribute.String;
+  };
+}
+
 export interface KomponentyNadpis extends Struct.ComponentSchema {
   collectionName: 'components_komponenty_nadpis';
   info: {
@@ -719,6 +730,7 @@ declare module '@strapi/strapi' {
       'komponenty.galerie': KomponentyGalerie;
       'komponenty.historie': KomponentyHistorie;
       'komponenty.karty': KomponentyKarty;
+      'komponenty.mapa': KomponentyMapa;
       'komponenty.nadpis': KomponentyNadpis;
       'komponenty.obrazek': KomponentyObrazek;
       'komponenty.organizace-skolniho-roku': KomponentyOrganizaceSkolnihoRoku;
