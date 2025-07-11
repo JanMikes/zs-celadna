@@ -12,7 +12,7 @@ namespace CeladnaZS\Web\Value\Content\Data;
  *      Meta_description: string,
  *      Umisteni_panelu: string,
  *      Komponenty: array<array{__component: string}>,
- *      bocni_panel: array{komponenty: array<array{__component: string}>},
+ *      bocni_panel: null|array{komponenty: array<array{__component: string}>},
  *      parent: null|array{slug: string},
  *  }
  */
