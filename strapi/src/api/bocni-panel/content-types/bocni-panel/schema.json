@@ -41,7 +41,10 @@
         "komponenty.aktuality",
         "komponenty.organizace-skolniho-roku",
         "komponenty.filtr-tagu",
-        "komponenty.bakalari"
+        "komponenty.bakalari",
+        "komponenty.tabulka",
+        "komponenty.mapa",
+        "komponenty.alert"
       ]
     }
   }

@@ -63,7 +63,12 @@
         "komponenty.tipy-na-vylet",
         "komponenty.historie",
         "komponenty.faq",
-        "komponenty.organizace-skolniho-roku"
+        "komponenty.organizace-skolniho-roku",
+        "komponenty.tabulka",
+        "komponenty.mapa",
+        "komponenty.filtr-tagu",
+        "komponenty.bakalari",
+        "komponenty.alert"
       ],
       "required": true,
       "min": 1

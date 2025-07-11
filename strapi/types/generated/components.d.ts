@@ -256,6 +256,35 @@ export interface ElementySoubor extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementyTabulkaBunka extends Struct.ComponentSchema {
+  collectionName: 'components_elementy_tabulka_bunkas';
+  info: {
+    displayName: 'Tabulka - bu\u0148ka';
+    icon: 'apps';
+  };
+  attributes: {
+    Hodnota: Schema.Attribute.String;
+    Styl: Schema.Attribute.Enumeration<
+      ['Norm\u00E1ln\u00ED', 'Zelen\u00E9 pozad\u00ED']
+    > &
+      Schema.Attribute.DefaultTo<'Norm\u00E1ln\u00ED'>;
+  };
+}
+
+export interface ElementyTabulkaRadek extends Struct.ComponentSchema {
+  collectionName: 'components_elementy_tabulka_radeks';
+  info: {
+    displayName: 'Tabulka - \u0159\u00E1dek';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Sloupec_1: Schema.Attribute.Component<'elementy.tabulka-bunka', false>;
+    Sloupec_2: Schema.Attribute.Component<'elementy.tabulka-bunka', false>;
+    Sloupec_3: Schema.Attribute.Component<'elementy.tabulka-bunka', false>;
+    Sloupec_4: Schema.Attribute.Component<'elementy.tabulka-bunka', false>;
+  };
+}
+
 export interface ElementyTelefon extends Struct.ComponentSchema {
   collectionName: 'components_elementy_telefons';
   info: {
@@ -614,6 +643,21 @@ export interface KomponentySouboryKeStazeni extends Struct.ComponentSchema {
   };
 }
 
+export interface KomponentyTabulka extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_tabulkas';
+  info: {
+    displayName: 'Tabulka';
+    icon: 'apps';
+  };
+  attributes: {
+    Nadpis_sloupec_1: Schema.Attribute.String;
+    Nadpis_sloupec_2: Schema.Attribute.String;
+    Nadpis_sloupec_3: Schema.Attribute.String;
+    Nadpis_sloupec_4: Schema.Attribute.String;
+    Radky: Schema.Attribute.Component<'elementy.tabulka-radek', true>;
+  };
+}
+
 export interface KomponentyTerminyAkci extends Struct.ComponentSchema {
   collectionName: 'components_komponenty_terminy_akci';
   info: {
@@ -716,6 +760,8 @@ declare module '@strapi/strapi' {
       'elementy.pole-formulare': ElementyPoleFormulare;
       'elementy.pole-formulare-s-moznostmi': ElementyPoleFormulareSMoznostmi;
       'elementy.soubor': ElementySoubor;
+      'elementy.tabulka-bunka': ElementyTabulkaBunka;
+      'elementy.tabulka-radek': ElementyTabulkaRadek;
       'elementy.telefon': ElementyTelefon;
       'elementy.termin-akce': ElementyTerminAkce;
       'elementy.tlacitko': ElementyTlacitko;
@@ -741,6 +787,7 @@ declare module '@strapi/strapi' {
       'komponenty.samosprava': KomponentySamosprava;
       'komponenty.sekce-s-dlazdicema': KomponentySekceSDlazdicema;
       'komponenty.soubory-ke-stazeni': KomponentySouboryKeStazeni;
+      'komponenty.tabulka': KomponentyTabulka;
       'komponenty.terminy-akci': KomponentyTerminyAkci;
       'komponenty.textove-pole': KomponentyTextovePole;
       'komponenty.tipy-na-vylet': KomponentyTipyNaVylet;

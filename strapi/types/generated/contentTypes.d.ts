@@ -457,6 +457,9 @@ export interface ApiBocniPanelBocniPanel extends Struct.CollectionTypeSchema {
         'komponenty.organizace-skolniho-roku',
         'komponenty.filtr-tagu',
         'komponenty.bakalari',
+        'komponenty.tabulka',
+        'komponenty.mapa',
+        'komponenty.alert',
       ]
     >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -722,6 +725,11 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
         'komponenty.historie',
         'komponenty.faq',
         'komponenty.organizace-skolniho-roku',
+        'komponenty.tabulka',
+        'komponenty.mapa',
+        'komponenty.filtr-tagu',
+        'komponenty.bakalari',
+        'komponenty.alert',
       ]
     > &
       Schema.Attribute.Required &
