@@ -322,7 +322,7 @@ hr.hr {
     font-weight: bold;
     text-decoration: none;
     color: var(--bs-primary);
-    border: 1px solid var(--bs-secondary);
+    border: 1px solid #999999;
     transition: all 0.3s;
 }
 
