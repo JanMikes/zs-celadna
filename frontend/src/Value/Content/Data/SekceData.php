@@ -12,7 +12,7 @@ namespace CeladnaZS\Web\Value\Content\Data;
  *      Meta_description: string,
  *      Umisteni_panelu: string,
  *      Komponenty: array<array{__component: string}>,
- *      Komponenty_panel: array<array{__component: string}>,
+ *      bocni_panel: array{komponenty: array<array{__component: string}>},
  *      parent: null|array{slug: string},
  *  }
  */
@@ -86,12 +86,41 @@ readonly final class SekceData
             }
         }
 
+        foreach ($data['bocni_panel']['komponenty'] ?? [] as $componentInfo) {
+            $component = match ($componentInfo['__component']) {
+                'komponenty.nadpis' => new Component('Nadpis', NadpisComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.textove-pole' => new Component('TextovePole', TextovePoleComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.aktuality' => new Component('Aktuality', AktualityComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.formular' => new Component('Formular', FormularComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.galerie' => new Component('Galerie', GalerieComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.obrazek' => new Component('Obrazek', ObrazekComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.rozdelovnik' => new Component('Rozdelovnik', RozdelovnikComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.samosprava' => new Component('Samosprava', SamospravaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.sekce-s-dlazdicema' => new Component('SekceSDlazdicema', SekceSDlazdicemaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.soubory-ke-stazeni' => new Component('SouboryKeStazeni', SouboryKeStazeniComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.tlacitka' => new Component('Tlacitka', TlacitkaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.uredni-deska' => new Component('UredniDeska', UredniDeskaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.terminy-akci' => new Component('TerminyAkci', TerminyAkciComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.vizitky' => new Component('Vizitky', VizitkyComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.karty' => new Component('Karty', KartyComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.program-kina' => new Component('ProgramKina', ProgramKinaComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.pas-s-obrazkem' => new Component('PasSObrazkem', PasSObrazkemComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.pas-karet-s-argumenty' => new Component('PasKaretSArgumenty', PasKaretSArgumentyComponentData::createFromStrapiResponse($componentInfo)),
+                'komponenty.tipy-na-vylet' => new Component('TipyNaVylet', TipyNaVyletComponentData::createFromStrapiResponse($componentInfo)),
+                default => null,
+            };
+
+            if ($component !== null) {
+                $componentsPanel[] = $component;
+            }
+        }
+
         return new self(
             Nazev: $data['Nazev'],
             slug: $data['slug'],
             Meta_description: $data['Meta_description'],
             Komponenty: $components,
-            Komponenty_panel: [],
+            Komponenty_panel: $componentsPanel,
             Umisteni_panelu: $data['Umisteni_panelu'],
             parentSlug: null,
         );

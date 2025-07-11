@@ -425,7 +425,7 @@ export interface ApiBocniPanelBocniPanel extends Struct.CollectionTypeSchema {
     singularName: 'bocni-panel';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
