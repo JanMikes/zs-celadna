@@ -1,9 +1,9 @@
-<div class="faq-component">
+<div class="faq-component my-5">
     {% for faq in data.items %}
         {% set collapseId = 'faq-' ~ loop.index ~ '-' ~ random(1000000) %}
 
         <div class="mb-4">
-            <div class="faq-question mb-2 collapse-toggle d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#{{ collapseId }}" aria-expanded="false" aria-controls="{{ collapseId }}" style="cursor: pointer;">
+            <div class="faq-question mb-3 collapse-toggle d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#{{ collapseId }}" aria-expanded="false" aria-controls="{{ collapseId }}" style="cursor: pointer;">
                 {{ faq.Otazka }}
                 <i class="bi bi-chevron-down"></i>
             </div>

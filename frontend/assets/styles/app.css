@@ -609,3 +609,18 @@ p img {
 .faq-question i {
     margin-left: 10px;
 }
+
+.faq-component > .mb-4:last-child {
+    margin-bottom: 0;
+}
+
+.organizace-skolniho-roku-title {
+    background: var(--bs-secondary);
+    color: #fff;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+
+.organizace-skolniho-roku-text {
+    padding-top: 3px;
+}

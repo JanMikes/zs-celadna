@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace CeladnaZS\Web\Value\Content\Data;
 
-use DateTimeImmutable;
-
 /**
  * @phpstan-type FaqDataArray array{
  *      Otazka: string,

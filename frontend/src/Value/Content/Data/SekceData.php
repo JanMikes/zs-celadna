@@ -116,6 +116,7 @@ readonly final class SekceData
             'komponenty.alert' => new Component('Alert', AlertComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.mapa' => new Component('Mapa', MapaComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.faq' => new Component('Faq', FaqComponentData::createFromStrapiResponse($componentInfo)),
+            'komponenty.organizace-skolniho-roku' => new Component('OrganizaceSkolnihoRoku', OrganizaceSkolnihoRokuComponentData::createFromStrapiResponse($componentInfo)),
             // default => null,
             default => throw new \Exception("Unknown component type '$componentName'."),
         };
