@@ -240,7 +240,9 @@ h1 {
 }
 
 .section-content-wrapper,
-.actuality-panel {
+.actuality-panel,
+.bakalari-panel,
+.actuality-filter-panel {
     background: #fff;
     border-radius: 15px;
     padding: 20px;
@@ -545,4 +547,28 @@ p img {
 .section-content-wrapper > .my-5:last-child,
 .side-panel > .my-5:last-child {
     margin-bottom: 0 !important;
+}
+
+.bakalari-panel {
+    text-align: center;
+}
+
+.bakalari-panel .bakalari-icon {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    height: 120px;
+    background: url('../images/bakalari.png') center center no-repeat;
+    background-size: contain;
+}
+
+.btn-sign-in {
+    text-decoration: none;
+    background: var(--bs-secondary);
+    color: #fff;
+    padding: 6px 18px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
 }
