@@ -572,3 +572,28 @@ p img {
     font-size: 16px;
     border: 0;
 }
+
+.alert-component {
+    background: #17375F;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+.alert-component a {
+    color: var(--bs-secondary);
+    font-weight: bold;
+}
+
+.section-content p:last-child {
+    margin-bottom: 0;
+}
+
+.alert-icon {
+    display: inline-block;
+    background: url('../images/alert-icon.svg') center center no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}

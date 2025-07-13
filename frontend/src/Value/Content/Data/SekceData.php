@@ -113,6 +113,7 @@ readonly final class SekceData
             'komponenty.tipy-na-vylet' => new Component('TipyNaVylet', TipyNaVyletComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.bakalari' => new Component('Bakalari', BakalariComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.filtr-tagu' => new Component('FiltrTagu', FiltrTaguComponentData::createFromStrapiResponse($componentInfo)),
+            'komponenty.alert' => new Component('Alert', AlertComponentData::createFromStrapiResponse($componentInfo)),
             // default => null,
             default => throw new \Exception("Unknown component type '$componentName'."),
         };
