@@ -597,3 +597,15 @@ p img {
     height: 40px;
     margin-right: 15px;
 }
+
+.faq-question {
+    background: var(--bs-primary);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.faq-question i {
+    margin-left: 10px;
+}

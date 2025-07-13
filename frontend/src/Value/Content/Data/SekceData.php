@@ -115,6 +115,7 @@ readonly final class SekceData
             'komponenty.filtr-tagu' => new Component('FiltrTagu', FiltrTaguComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.alert' => new Component('Alert', AlertComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.mapa' => new Component('Mapa', MapaComponentData::createFromStrapiResponse($componentInfo)),
+            'komponenty.faq' => new Component('Faq', FaqComponentData::createFromStrapiResponse($componentInfo)),
             // default => null,
             default => throw new \Exception("Unknown component type '$componentName'."),
         };
