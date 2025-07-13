@@ -488,7 +488,9 @@ export interface KomponentyMapa extends Struct.ComponentSchema {
     icon: 'earth';
   };
   attributes: {
-    URL: Schema.Attribute.String;
+    URL: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'https://www.google.com/maps/embed?pb='>;
   };
 }
 

@@ -7,7 +7,9 @@
   "options": {},
   "attributes": {
     "URL": {
-      "type": "string"
+      "type": "text",
+      "default": "https://www.google.com/maps/embed?pb=",
+      "required": true
     }
   },
   "config": {}
