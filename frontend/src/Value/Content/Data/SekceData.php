@@ -118,8 +118,9 @@ readonly final class SekceData
             'komponenty.faq' => new Component('Faq', FaqComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.organizace-skolniho-roku' => new Component('OrganizaceSkolnihoRoku', OrganizaceSkolnihoRokuComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.tabulka' => new Component('Tabulka', TabulkaComponentData::createFromStrapiResponse($componentInfo)),
-            default => null,
-            // default => throw new \Exception("Unknown component type '$componentName'."),
+            'komponenty.historie' => new Component('Historie', HistorieComponentData::createFromStrapiResponse($componentInfo)),
+            // default => null,
+            default => throw new \Exception("Unknown component type '$componentName'."),
         };
     }
 }

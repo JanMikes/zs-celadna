@@ -631,3 +631,15 @@ p img {
     display: inline-block;
     font-weight: bold;
 }
+
+.historie-title {
+    background: var(--bs-primary);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.historie-title i {
+    margin-left: 10px;
+}
