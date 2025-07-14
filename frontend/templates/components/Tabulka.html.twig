@@ -1,5 +1,5 @@
 <div class="my-5 table-component table-responsive">
-    <table class="table">
+    <table class="table table-borderless">
         <thead>
             <tr>
                 {% if data.Nadpis1 %}
@@ -20,16 +20,16 @@
             {% for radek in data.Radky %}
                 <tr>
                     {% if radek.Sloupec1 %}
-                        <td>{{ radek.Sloupec1.Hodnota }}</td>
+                        <td class="{{ radek.Sloupec1.Styl == 'Zelené pozadí' ? 'green-cell' }}"><span>{{ radek.Sloupec1.Hodnota }}</span></td>
                     {% endif %}
                     {% if radek.Sloupec2 %}
-                        <td>{{ radek.Sloupec2.Hodnota }}</td>
+                        <td class="{{ radek.Sloupec2.Styl == 'Zelené pozadí' ? 'green-cell' }}"><span>{{ radek.Sloupec2.Hodnota }}</span></td>
                     {% endif %}
                     {% if radek.Sloupec3 %}
-                        <td>{{ radek.Sloupec3.Hodnota }}</td>
+                        <td class="{{ radek.Sloupec3.Styl == 'Zelené pozadí' ? 'green-cell' }}"><span>{{ radek.Sloupec3.Hodnota }}</span></td>
                     {% endif %}
                     {% if radek.Sloupec4 %}
-                        <td>{{ radek.Sloupec4.Hodnota }}</td>
+                        <td class="{{ radek.Sloupec4.Styl == 'Zelené pozadí' ? 'green-cell' }}"><span>{{ radek.Sloupec4.Hodnota }}</span></td>
                     {% endif %}
                 </tr>
             {% endfor %}
