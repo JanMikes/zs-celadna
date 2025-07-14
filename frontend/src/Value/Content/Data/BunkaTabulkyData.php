@@ -5,18 +5,27 @@ declare(strict_types=1);
 namespace CeladnaZS\Web\Value\Content\Data;
 
 /**
- * @phpstan-type BunkaTabulkyDataArray array{}
+ * @phpstan-type BunkaTabulkyDataArray array{
+ *     Hodnota: string,
+ *     Styl: string,
+ * }
  */
 readonly final class BunkaTabulkyData
 {
-    /** @use CanCreateManyFromStrapiResponse<BunkaTabulkyDataArray> */
-    use CanCreateManyFromStrapiResponse;
+    public function __construct(
+        public string $Hodnota,
+        public string $Styl,
+    ) {
+    }
 
     /**
      * @param BunkaTabulkyDataArray $data
      */
     public static function createFromStrapiResponse(array $data): self
     {
-        return new self();
+        return new self(
+            Hodnota: $data['Hodnota'],
+            Styl: $data['Styl'],
+        );
     }
 }

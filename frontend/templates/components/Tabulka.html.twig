@@ -1,0 +1,38 @@
+<div class="my-5 table-component table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                {% if data.Nadpis1 %}
+                    <th>{{ data.Nadpis1 }}</th>
+                {% endif %}
+                {% if data.Nadpis2 %}
+                    <th>{{ data.Nadpis2 }}</th>
+                {% endif %}
+                {% if data.Nadpis3 %}
+                    <th>{{ data.Nadpis3 }}</th>
+                {% endif %}
+                {% if data.Nadpis4 %}
+                    <th>{{ data.Nadpis4 }}</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for radek in data.Radky %}
+                <tr>
+                    {% if radek.Sloupec1 %}
+                        <td>{{ radek.Sloupec1.Hodnota }}</td>
+                    {% endif %}
+                    {% if radek.Sloupec2 %}
+                        <td>{{ radek.Sloupec2.Hodnota }}</td>
+                    {% endif %}
+                    {% if radek.Sloupec3 %}
+                        <td>{{ radek.Sloupec3.Hodnota }}</td>
+                    {% endif %}
+                    {% if radek.Sloupec4 %}
+                        <td>{{ radek.Sloupec4.Hodnota }}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
