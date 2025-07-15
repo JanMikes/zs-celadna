@@ -18,7 +18,7 @@
         <h1 class="fw-bolder mb-5">{{ sekce.Nazev }}</h1>
 
         <div class="row">
-            <div class="{{ sekce.Komponenty_panel ? 'col-7' : 'col-12' }}">
+            <div class="{{ sekce.Komponenty_panel ? 'col-md-7' : 'col-md-12' }}">
                 <div class="section-content-wrapper">
                     {% for komponenta in sekce.Komponenty %}
                         {{ component(komponenta.type, {
@@ -31,7 +31,7 @@
             </div>
 
             {% if sekce.Komponenty_panel %}
-                <div class="col-5 side-panel">
+                <div class="col-md-5 side-panel">
                     {% for komponenta in sekce.Komponenty_panel %}
                         {{ component(komponenta.type, {
                             hasPanel: sekce.Komponenty_panel|length > 0,

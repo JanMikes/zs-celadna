@@ -10,6 +10,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         'secret' => '%env(APP_SECRET)%',
         'http_method_override' => false,
         'csrf_protection' => true,
+        'default_locale' => 'cs',
         'session' => [
             'handler_id' => PdoSessionHandler::class,
             'cookie_secure' => 'auto',

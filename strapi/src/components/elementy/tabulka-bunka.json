@@ -7,7 +7,7 @@
   "options": {},
   "attributes": {
     "Hodnota": {
-      "type": "string"
+      "type": "text"
     },
     "Styl": {
       "type": "enumeration",

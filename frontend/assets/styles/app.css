@@ -685,7 +685,7 @@ p img {
 
 .margin-component {
     margin-bottom: 3rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .margin-heading,
@@ -693,7 +693,7 @@ p img {
 .side-panel h2, .side-panel h3, .side-panel h4, .side-panel h5, .side-panel h6
 {
     margin-top: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .actuality-filter-panel {

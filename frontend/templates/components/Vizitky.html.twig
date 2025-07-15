@@ -3,7 +3,7 @@
         <div class="col-sm-6 col-lg-4">
             <div class="card-doctor p-4">
 
-                <h4>
+                <h4 class="mt-0">
                     {% for lekar in vizitka.Lekari %}
                         {% if not loop.first %}<br>{% endif %}{{ lekar.Jmeno }}
                     {% endfor %}

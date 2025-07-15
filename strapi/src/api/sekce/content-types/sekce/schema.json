@@ -31,6 +31,11 @@
       "relation": "oneToOne",
       "target": "api::sekce.sekce"
     },
+    "bocni_panel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bocni-panel.bocni-panel"
+    },
     "Umisteni_panelu": {
       "type": "enumeration",
       "default": "Vpravo",
@@ -72,11 +77,6 @@
       ],
       "required": true,
       "min": 1
-    },
-    "bocni_panel": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::bocni-panel.bocni-panel"
     }
   }
 }
