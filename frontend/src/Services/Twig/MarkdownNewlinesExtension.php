@@ -24,7 +24,7 @@ final class MarkdownNewlinesExtension extends AbstractExtension
     {
         // Remove \n that immediately follow a closing HTML tag
         $formatted = preg_replace('/(<\/[^>]+>)\n/', '$1', $text);
-        $formatted = str_replace("\n", "<br>", $formatted);
+        $formatted = str_replace("\n", "<br>", $formatted ?? '');
 
         return new Markup($formatted, 'UTF-8');
     }
