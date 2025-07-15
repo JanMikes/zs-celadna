@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace CeladnaZS\Web\Value\Content\Data;
 
 /**
- * @phpstan-import-type BunkaTabulkyDataArray From BunkaTabulkyData
+ * @phpstan-import-type BunkaTabulkyDataArray from BunkaTabulkyData
  * @phpstan-type RadekTabulkyDataArray array{
  *     Sloupec_1: null|BunkaTabulkyDataArray,
  *     Sloupec_2: null|BunkaTabulkyDataArray,

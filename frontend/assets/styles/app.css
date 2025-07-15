@@ -548,6 +548,17 @@ p img {
     margin-bottom: 0 !important;
 }
 
+.section-content-wrapper > h2:last-child,
+.section-content-wrapper > h3:last-child,
+.section-content-wrapper > h4:last-child,
+.section-content-wrapper > .my-5:last-child,
+.side-panel > h2:last-child,
+.side-panel > h3:last-child,
+.side-panel > h4:last-child,
+.side-panel > .my-5:last-child {
+    margin-bottom: 0 !important;
+}
+
 .bakalari-panel {
     text-align: center;
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace CeladnaZS\Web\Value\Content\Data;
 
 /**
- * @phpstan-import-type ImageDataArray From ImageData
+ * @phpstan-import-type ImageDataArray from ImageData
  * @phpstan-type HistorieDataArray array{
  *     Nadpis: string,
  *     Text: null|string,

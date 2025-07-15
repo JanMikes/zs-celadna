@@ -119,8 +119,8 @@ readonly final class SekceData
             'komponenty.organizace-skolniho-roku' => new Component('OrganizaceSkolnihoRoku', OrganizaceSkolnihoRokuComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.tabulka' => new Component('Tabulka', TabulkaComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.historie' => new Component('Historie', HistorieComponentData::createFromStrapiResponse($componentInfo)),
-            // default => null,
-            default => throw new \Exception("Unknown component type '$componentName'."),
+            default => null,
+            // default => throw new \Exception("Unknown component type '$componentName'."),
         };
     }
 }
