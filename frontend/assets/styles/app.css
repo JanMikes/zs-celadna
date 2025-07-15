@@ -696,3 +696,21 @@ p img {
     margin-bottom: 1rem;
 }
 
+.actuality-filter-panel {
+    h3 {
+        margin-top: 0;
+    }
+}
+
+.actuality-panel h3 {
+    margin-top: 0;
+}
+
+.actuality-panel a {
+    display: block;
+}
+
+
+.actuality-panel a + a {
+    margin-top: 1.5rem;
+}
