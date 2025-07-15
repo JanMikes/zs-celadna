@@ -10,7 +10,7 @@
 
                 <div id="{{ collapseId }}" class="collapse">
                     <div class="pt-2">
-                        {{ historie.Text|markdown_to_html }}
+                        {{ historie.Text|markdown_to_html|newlines }}
 
                         {% if historie.Fotka %}
                             <p class="mt-3 mb-0">

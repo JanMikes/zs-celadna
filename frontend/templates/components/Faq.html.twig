@@ -9,7 +9,7 @@
             </div>
 
             <div id="{{ collapseId }}" class="collapse">
-                {{ faq.Odpoved|markdown_to_html }}
+                {{ faq.Odpoved|markdown_to_html|newlines }}
             </div>
         </div>
     {% endfor %}
