@@ -306,11 +306,12 @@ hr.hr {
     border-style: dashed !important;
 }
 
-.button-style-1 a {
+.button-style-1 a, .button-style-1 {
     text-decoration: none;
     background: var(--bs-secondary);
     padding: 9px 27px;
     color: #fff;
+    border: 0;
 }
 
 .button-style-2 a {
@@ -496,7 +497,7 @@ p img {
     width: 100%;
 }
 
-.custon-badge-btn-full {
+.custom-badge-btn-full {
     width: 100% !important;
     border-radius: 0 !important;
     padding: 6px 10px !important;
