@@ -170,6 +170,7 @@ export interface ElementyOdkaz extends Struct.ComponentSchema {
     icon: 'code';
   };
   attributes: {
+    Kotva: Schema.Attribute.String;
     sekce: Schema.Attribute.Relation<'oneToOne', 'api::sekce.sekce'>;
     Soubor: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     URL: Schema.Attribute.String;
@@ -502,7 +503,12 @@ export interface KomponentyNadpis extends Struct.ComponentSchema {
     icon: 'bold';
   };
   attributes: {
+    Kotva: Schema.Attribute.String;
     Nadpis: Schema.Attribute.String & Schema.Attribute.Required;
+    Styl: Schema.Attribute.Enumeration<
+      ['Norm\u00E1ln\u00ED', 'S odd\u011Blovn\u00EDkem']
+    > &
+      Schema.Attribute.DefaultTo<'Norm\u00E1ln\u00ED'>;
     Typ: Schema.Attribute.Enumeration<['h2', 'h3', 'h4', 'h5']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'h2'>;
