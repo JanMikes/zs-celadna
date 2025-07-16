@@ -660,10 +660,12 @@ export interface ApiMenuMenu extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Footer: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::menu.menu'> &
       Schema.Attribute.Private;
     Nadpis: Schema.Attribute.String & Schema.Attribute.Required;
+    Navbar: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     Odkaz: Schema.Attribute.Component<'elementy.odkaz', false> &
       Schema.Attribute.Required;
     Poradi: Schema.Attribute.Integer &
@@ -676,6 +678,7 @@ export interface ApiMenuMenu extends Struct.CollectionTypeSchema {
       > &
       Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
+    Sidebar: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

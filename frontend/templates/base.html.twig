@@ -44,7 +44,7 @@
 
               <!-- Menu links (tablet and up) -->
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-none d-md-flex flex-row">
-                  <twig:Menu />
+                  <twig:Menu type="navbar" />
               </ul>
 
               <!-- Right-aligned link -->
@@ -66,7 +66,7 @@
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav">
-                  <twig:Menu />
+                  <twig:Menu type="sidebar" />
               </ul>
             </div>
           </div>
@@ -136,14 +136,7 @@
 
                             <div class="col-md-6 mb-3">
                                 <ul class="list-unstyled text-end">
-                                    <li><a href="#">Ochrana soukromí</a></li>
-                                    <li><a href="#">GDPR</a></li>
-                                    <li><a href="#">Aktuality</a></li>
-                                    <li><a href="#">Kontakty</a></li>
-                                    <li><a href="#">Dotace</a></li>
-                                    <li><a href="#">Inspekční zpráva ČŠI</a></li>
-                                    <li><a href="#">Zpracování osobních údajů</a></li>
-                                    <li><a href="#">Prohlášení o přístupnosti</a></li>
+                                    <twig:Menu type="footer" />
                                 </ul>
                             </div>
                         </div>

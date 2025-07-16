@@ -1,5 +1,5 @@
 {% if isPanel %}
-    <div class="actuality-panel">
+    <div class="actuality-panel margin-component">
         {% for aktualita in this.getItems(data.Pocet, data.kategorie) %}
             <a href="{{ path('detail_aktuality', {'slug': aktualita.slug}) }}" class="text-decoration-none">
                 <h3 class="h5 mt-0 {{ loop.first == false ? 'mt-3' }}">{{ aktualita.Nadpis }}</h3>

@@ -237,6 +237,7 @@ h1 {
     border-left: 6px solid var(--bs-secondary);
     padding-left: 14px;
     line-height: 100%;
+    font-weight: 900 !important;
 }
 
 .section-content-wrapper,
@@ -404,8 +405,12 @@ textarea:hover {
     background: url('../images/icon-female-placeholder.svg') center center no-repeat;
 }
 
-.section-content h2, .section-content h3, .section-content h4, .section-content h5, .section-content h6 {
-    font-weight: bold !important;
+.section-content h2, .section-content h3, .section-content h4 {
+    font-weight: 900 !important;
+}
+
+.section-content h5, .section-content h6 {
+    font-weight: 700 !important;
 }
 
 
