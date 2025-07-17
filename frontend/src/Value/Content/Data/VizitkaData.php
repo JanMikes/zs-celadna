@@ -5,14 +5,16 @@ declare(strict_types=1);
 namespace CeladnaZS\Web\Value\Content\Data;
 
 /**
+ * @phpstan-import-type ClovekDataArray from ClovekData
  * @phpstan-import-type TelefonDataArray from TelefonData
  * @phpstan-type VizitkaDataArray array{
  *     Adresa: null|string,
  *     Odkaz_na_mapu: null|string,
  *     Odkaz: null|string,
  *     Oteviraci_doba: null|string,
+ *     Nadpis_oteviraci_doby: null|string,
  *     Telefony: array<TelefonDataArray>,
- *     lides: array<string>,
+ *     lides: array<ClovekDataArray>,
  * }
  */
 readonly final class VizitkaData
@@ -25,7 +27,8 @@ readonly final class VizitkaData
         public null|string $OdkazNaMapu,
         public null|string $Odkaz,
         public null|string $OteviraciDoba,
-        /** @var array<string> */
+        public null|string $NadpisOteviraciDoby,
+        /** @var array<ClovekData> */
         public array $lides,
         /** @var array<TelefonData> */
         public array $Telefony,
@@ -41,7 +44,8 @@ readonly final class VizitkaData
             OdkazNaMapu: $data['Odkaz_na_mapu'],
             Odkaz: $data['Odkaz'],
             OteviraciDoba: $data['Oteviraci_doba'],
-            lides: [],
+            NadpisOteviraciDoby: $data['Nadpis_oteviraci_doby'],
+            lides: ClovekData::createManyFromStrapiResponse($data['lides']),
             Telefony: TelefonData::createManyFromStrapiResponse($data['Telefony']),
         );
     }
