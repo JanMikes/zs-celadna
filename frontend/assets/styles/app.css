@@ -625,6 +625,7 @@ p img {
     padding: 3px 10px;
     display: inline-block;
     font-weight: bold;
+    white-space: nowrap
 }
 
 .historie-title {
