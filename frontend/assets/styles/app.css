@@ -725,3 +725,7 @@ p img {
 .actuality-panel a + a {
     margin-top: 1.5rem;
 }
+
+ul > br {
+    display: none;
+}

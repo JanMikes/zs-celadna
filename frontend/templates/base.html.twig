@@ -2,7 +2,7 @@
 <html lang="{{ app.request.locale }}" data-turbo="false">
     <head>
         <meta charset="UTF-8">
-        <title>{% apply spaceless %}{% block title %}{% endblock %}{% endapply %} | ZŠ Čeladná</title>
+        <title>{%- block title -%}{%- endblock %} | ZŠ Čeladná</title>
 
         {% block meta_viewport %}
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,8 +11,8 @@
         <meta name="turbo-prefetch" content="false">
         <meta name="turbo-refresh-method" content="morph">
 
-        <meta name="description" content="{% apply spaceless %}{% block meta_description %}{% endblock %}{% endapply %}">
-        <meta name="keywords" content="{% apply spaceless %}{% block meta_keywords %}{% endblock %}{% endapply %}">
+        <meta name="description" content="{%- block meta_description -%}{%- endblock -%}">
+        <meta name="keywords" content="{%- block meta_keywords -%}{%- endblock -%}">
 
         <link type="text/plain" rel="author" href="{{ asset('humans.txt') }}">
 

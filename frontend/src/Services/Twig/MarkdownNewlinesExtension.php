@@ -26,6 +26,9 @@ final class MarkdownNewlinesExtension extends AbstractExtension
         $formatted = preg_replace('/(<\/[^>]+>)\n/', '$1', $text);
         $formatted = str_replace("\n", "<br>", $formatted ?? '');
 
+        // Remove <br> that immediately follow <ul> or <li>
+        $formatted = preg_replace('/<(ul|li)>(?:<br\s*\/?>)+/', '<$1>', $formatted);
+
         return new Markup($formatted, 'UTF-8');
     }
 }
