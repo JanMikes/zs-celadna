@@ -11,8 +11,10 @@ namespace CeladnaZS\Web\Value\Content\Data;
  *     Adresa: null|string,
  *     Odkaz_na_mapu: null|string,
  *     Odkaz: null|string,
- *     Oteviraci_doba: null|string,
  *     Nadpis_oteviraci_doby: null|string,
+ *     Oteviraci_doba: null|string,
+ *     Email: null|string,
+ *     Poznamka: null|string,
  *     Telefony: array<TelefonDataArray>,
  *     lides: array<ClovekDataArray>,
  * }
@@ -28,6 +30,8 @@ readonly final class VizitkaData
         public null|string $Odkaz,
         public null|string $OteviraciDoba,
         public null|string $NadpisOteviraciDoby,
+        public null|string $Email,
+        public null|string $Poznamka,
         /** @var array<ClovekData> */
         public array $lides,
         /** @var array<TelefonData> */
@@ -44,6 +48,8 @@ readonly final class VizitkaData
             OdkazNaMapu: $data['Odkaz_na_mapu'],
             Odkaz: $data['Odkaz'],
             OteviraciDoba: $data['Oteviraci_doba'],
+            Email: $data['Email'],
+            Poznamka: $data['Poznamka'],
             NadpisOteviraciDoby: $data['Nadpis_oteviraci_doby'],
             lides: ClovekData::createManyFromStrapiResponse($data['lides']),
             Telefony: TelefonData::createManyFromStrapiResponse($data['Telefony']),

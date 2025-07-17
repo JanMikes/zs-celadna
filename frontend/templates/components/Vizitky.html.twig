@@ -35,6 +35,18 @@
                     </p>
                 {% endif %}
 
+                {% if vizitka.Email %}
+                    <p>
+                        <a href="mailto:{{ vizitka.Email }}">{{ vizitka.Email }}</a>
+                    </p>
+                {% endif %}
+
+                {% if vizitka.Poznamka %}
+                    <p class="small">
+                        {{ vizitka.Poznamka }}
+                    </p>
+                {% endif %}
+
 
                 {% if vizitka.OteviraciDoba %}
                     <hr class="hr-dotted my-4">
