@@ -31,19 +31,6 @@
       "relation": "oneToOne",
       "target": "api::sekce.sekce"
     },
-    "bocni_panel": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::bocni-panel.bocni-panel"
-    },
-    "Umisteni_panelu": {
-      "type": "enumeration",
-      "default": "Vpravo",
-      "enum": [
-        "Vpravo",
-        "Vlevo"
-      ]
-    },
     "Komponenty": {
       "type": "dynamiczone",
       "components": [
@@ -77,6 +64,47 @@
       ],
       "required": true,
       "min": 1
+    },
+    "Umisteni_panelu": {
+      "type": "enumeration",
+      "default": "Vpravo",
+      "enum": [
+        "Vpravo",
+        "Vlevo"
+      ]
+    },
+    "bocni_panel": {
+      "type": "dynamiczone",
+      "components": [
+        "komponenty.vizitky",
+        "komponenty.uredni-deska",
+        "komponenty.tlacitka",
+        "komponenty.tipy-na-vylet",
+        "komponenty.textove-pole",
+        "komponenty.terminy-akci",
+        "komponenty.tabulka",
+        "komponenty.soubory-ke-stazeni",
+        "komponenty.sekce-s-dlazdicema",
+        "komponenty.samosprava",
+        "komponenty.rozdelovnik",
+        "komponenty.program-kina",
+        "komponenty.pas-s-obrazkem",
+        "komponenty.pas-karet-s-argumenty",
+        "komponenty.organizace-skolniho-roku",
+        "komponenty.obrazek",
+        "komponenty.nadpis",
+        "komponenty.mapa",
+        "komponenty.karty",
+        "komponenty.historie",
+        "komponenty.galerie",
+        "komponenty.formular",
+        "komponenty.filtr-tagu",
+        "komponenty.faq",
+        "komponenty.bocni-panel",
+        "komponenty.bakalari",
+        "komponenty.alert",
+        "komponenty.aktuality"
+      ]
     }
   }
 }

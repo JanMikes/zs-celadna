@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace CeladnaZS\Web\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpClient\Exception\ClientException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use CeladnaZS\Web\Services\Strapi\StrapiContent;
@@ -17,9 +18,17 @@ final class HomepageController extends AbstractController
     #[Route(path: '/', name: 'homepage')]
     public function __invoke(): Response
     {
+
+        try {
+            $section = $this->content->getSekceData('home');
+        } catch (ClientException) {
+            $section = null;
+        }
+
         return $this->render('homepage.html.twig', [
             'aktuality' => $this->content->getAktualityData(limit: 4),
             'uredni_deska' => $this->content->getUredniDeskyData(limit: 6, shouldHideIfExpired: true),
+            'section' => $section,
         ]);
     }
 }

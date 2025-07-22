@@ -70,5 +70,31 @@
                 <a href="{{ path('uredni_deska') }}" class="text-secondary text-decoration-none">Všechny příspěvky &raquo;</a>
             </p>
         </div>
+
+        <div class="row">
+            <div class="{{ sekce.Komponenty_panel ? 'col-md-8' : 'col-md-12' }}">
+                <div class="section-content-wrapper">
+                    {% for komponenta in sekce.Komponenty %}
+                        {{ component(komponenta.type, {
+                            hasPanel: sekce.Komponenty_panel|length > 0,
+                            isPanel: false,
+                            data: komponenta.data,
+                        }) }}
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% if sekce.Komponenty_panel %}
+                <div class="col-md-4 side-panel">
+                    {% for komponenta in sekce.Komponenty_panel %}
+                        {{ component(komponenta.type, {
+                            hasPanel: sekce.Komponenty_panel|length > 0,
+                            isPanel: true,
+                            data: komponenta.data,
+                        }) }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
     {% endif %}
 {% endblock %}

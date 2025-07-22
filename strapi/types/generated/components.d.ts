@@ -406,6 +406,20 @@ export interface KomponentyBakalari extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface KomponentyBocniPanel extends Struct.ComponentSchema {
+  collectionName: 'components_komponenty_bocni_panels';
+  info: {
+    displayName: '\u0160ablona bo\u010Dn\u00EDho panelu';
+    icon: 'television';
+  };
+  attributes: {
+    bocni_panel: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::bocni-panel.bocni-panel'
+    >;
+  };
+}
+
 export interface KomponentyFaq extends Struct.ComponentSchema {
   collectionName: 'components_komponenty_faqs';
   info: {
@@ -778,6 +792,7 @@ declare module '@strapi/strapi' {
       'komponenty.aktuality': KomponentyAktuality;
       'komponenty.alert': KomponentyAlert;
       'komponenty.bakalari': KomponentyBakalari;
+      'komponenty.bocni-panel': KomponentyBocniPanel;
       'komponenty.faq': KomponentyFaq;
       'komponenty.filtr-tagu': KomponentyFiltrTagu;
       'komponenty.formular': KomponentyFormular;

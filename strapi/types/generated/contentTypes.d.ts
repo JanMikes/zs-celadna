@@ -697,9 +697,37 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    bocni_panel: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::bocni-panel.bocni-panel'
+    bocni_panel: Schema.Attribute.DynamicZone<
+      [
+        'komponenty.vizitky',
+        'komponenty.uredni-deska',
+        'komponenty.tlacitka',
+        'komponenty.tipy-na-vylet',
+        'komponenty.textove-pole',
+        'komponenty.terminy-akci',
+        'komponenty.tabulka',
+        'komponenty.soubory-ke-stazeni',
+        'komponenty.sekce-s-dlazdicema',
+        'komponenty.samosprava',
+        'komponenty.rozdelovnik',
+        'komponenty.program-kina',
+        'komponenty.pas-s-obrazkem',
+        'komponenty.pas-karet-s-argumenty',
+        'komponenty.organizace-skolniho-roku',
+        'komponenty.obrazek',
+        'komponenty.nadpis',
+        'komponenty.mapa',
+        'komponenty.karty',
+        'komponenty.historie',
+        'komponenty.galerie',
+        'komponenty.formular',
+        'komponenty.filtr-tagu',
+        'komponenty.faq',
+        'komponenty.bocni-panel',
+        'komponenty.bakalari',
+        'komponenty.alert',
+        'komponenty.aktuality',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

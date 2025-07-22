@@ -21,6 +21,10 @@ final class SectionController extends AbstractController
     #[Route(path: '/{path}', name: 'section', requirements: ['path' => '.*'], priority: -10)]
     public function __invoke(string $path): Response
     {
+        if ($path === 'home') {
+            return $this->redirectToRoute('homepage');
+        }
+
         $breadcrumbLinks = [];
         $breadcrumbs = explode('/', $path);
         $currentSectionSlug = array_pop($breadcrumbs);
