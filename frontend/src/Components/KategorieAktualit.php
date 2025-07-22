@@ -9,7 +9,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use CeladnaZS\Web\Services\Strapi\StrapiContent;
 
 #[AsTwigComponent]
-readonly final class FiltrTagu
+readonly final class KategorieAktualit
 {
     public function __construct(
         private StrapiContent $content,

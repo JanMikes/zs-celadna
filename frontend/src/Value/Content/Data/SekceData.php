@@ -65,7 +65,7 @@ readonly final class SekceData
             }
         }
 
-        foreach ($data['bocni_panel']['komponenty'] ?? [] as $componentInfo) {
+        foreach ($data['bocni_panel'] as $componentInfo) {
             $component = self::createComponent($componentInfo);
 
             if ($component !== null) {
@@ -112,15 +112,15 @@ readonly final class SekceData
             'komponenty.pas-karet-s-argumenty' => new Component('PasKaretSArgumenty', PasKaretSArgumentyComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.tipy-na-vylet' => new Component('TipyNaVylet', TipyNaVyletComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.bakalari' => new Component('Bakalari', BakalariComponentData::createFromStrapiResponse($componentInfo)),
-            'komponenty.filtr-tagu' => new Component('FiltrTagu', FiltrTaguComponentData::createFromStrapiResponse($componentInfo)),
+            'komponenty.filtr-tagu' => new Component('KategorieAktualit', KategorieAktualitComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.alert' => new Component('Alert', AlertComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.mapa' => new Component('Mapa', MapaComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.faq' => new Component('Faq', FaqComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.organizace-skolniho-roku' => new Component('OrganizaceSkolnihoRoku', OrganizaceSkolnihoRokuComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.tabulka' => new Component('Tabulka', TabulkaComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.historie' => new Component('Historie', HistorieComponentData::createFromStrapiResponse($componentInfo)),
-            default => null,
-            // default => throw new \Exception("Unknown component type '$componentName'."),
+            // default => null,
+            default => throw new \Exception("Unknown component type '$componentName'."),
         };
     }
 }

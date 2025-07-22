@@ -434,7 +434,7 @@ export interface KomponentyFaq extends Struct.ComponentSchema {
 export interface KomponentyFiltrTagu extends Struct.ComponentSchema {
   collectionName: 'components_komponenty_filtr_tagu';
   info: {
-    displayName: 'Filtr tag\u016F';
+    displayName: 'Kategorie aktualit';
     icon: 'attachment';
   };
   attributes: {};
