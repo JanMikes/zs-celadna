@@ -12,7 +12,7 @@ namespace CeladnaZS\Web\Value\Content\Data;
  *      Meta_description: string,
  *      Umisteni_panelu: string,
  *      Komponenty: array<array{__component: string}>,
- *      bocni_panel: null|array{komponenty: array<array{__component: string}>},
+ *      bocni_panel: array<array{__component: string}>,
  *      parent: null|array{slug: string},
  *  }
  */
@@ -58,19 +58,11 @@ readonly final class SekceData
         $componentsPanel = [];
 
         foreach ($data['Komponenty'] as $componentInfo) {
-            $component = self::createComponent($componentInfo);
-
-            if ($component !== null) {
-                $components[] = $component;
-            }
+            $components[] = self::createComponent($componentInfo);
         }
 
         foreach ($data['bocni_panel'] as $componentInfo) {
-            $component = self::createComponent($componentInfo);
-
-            if ($component !== null) {
-                $componentsPanel[] = $component;
-            }
+            $componentsPanel[] = self::createComponent($componentInfo);
         }
 
         return new self(
@@ -87,7 +79,7 @@ readonly final class SekceData
     /**
      * @param array{__component: string} $componentInfo
      */
-    private static function createComponent(array $componentInfo): ?Component
+    public static function createComponent(array $componentInfo): Component
     {
         $componentName = $componentInfo['__component'];
 
@@ -119,7 +111,7 @@ readonly final class SekceData
             'komponenty.organizace-skolniho-roku' => new Component('OrganizaceSkolnihoRoku', OrganizaceSkolnihoRokuComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.tabulka' => new Component('Tabulka', TabulkaComponentData::createFromStrapiResponse($componentInfo)),
             'komponenty.historie' => new Component('Historie', HistorieComponentData::createFromStrapiResponse($componentInfo)),
-            // default => null,
+            'komponenty.bocni-panel' => new Component('BocniPanel', BocniPanelComponentData::createFromStrapiResponse($componentInfo)),
             default => throw new \Exception("Unknown component type '$componentName'."),
         };
     }
