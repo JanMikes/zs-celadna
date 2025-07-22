@@ -305,7 +305,7 @@ h1 {
 }
 
 hr.hr {
-    border-color: var(--bs-primary);
+    border-color: #CBCBCB;
     opacity: 1;
 }
 
@@ -576,6 +576,10 @@ p img {
     font-size: 16px;
 }
 
+.alert-component p:last-child {
+    margin-bottom: 0;
+}
+
 .alert-component a {
     color: var(--bs-secondary);
     font-weight: bold;
@@ -640,12 +644,13 @@ p img {
 }
 
 .historie-title {
-    background: var(--bs-primary);
+    background: #17375F;
     color: #fff;
     padding: 5px 10px;
     font-size: 18px;
     font-weight: bold;
     position: relative;
+    border-radius: 4px;
 }
 
 .historie-title i {

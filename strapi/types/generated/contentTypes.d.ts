@@ -518,6 +518,35 @@ export interface ApiFormularFormular extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
+  collectionName: 'homepages';
+  info: {
+    displayName: 'Homepage';
+    pluralName: 'homepages';
+    singularName: 'homepage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Karty: Schema.Attribute.Component<'elementy.karta-s-argumenty', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage.homepage'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Slider: Schema.Attribute.Component<'elementy.slide', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiIkonkyIkonky extends Struct.CollectionTypeSchema {
   collectionName: 'ikonkies';
   info: {
@@ -1379,6 +1408,7 @@ declare module '@strapi/strapi' {
       'api::aktuality.aktuality': ApiAktualityAktuality;
       'api::bocni-panel.bocni-panel': ApiBocniPanelBocniPanel;
       'api::formular.formular': ApiFormularFormular;
+      'api::homepage.homepage': ApiHomepageHomepage;
       'api::ikonky.ikonky': ApiIkonkyIkonky;
       'api::kalendar-akci.kalendar-akci': ApiKalendarAkciKalendarAkci;
       'api::kategorie-uredni-desky.kategorie-uredni-desky': ApiKategorieUredniDeskyKategorieUredniDesky;

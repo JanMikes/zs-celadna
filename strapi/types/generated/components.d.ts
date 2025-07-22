@@ -244,6 +244,21 @@ export interface ElementyPoleFormulareSMoznostmi
   };
 }
 
+export interface ElementySlide extends Struct.ComponentSchema {
+  collectionName: 'components_elementy_slides';
+  info: {
+    displayName: 'Slide';
+    icon: 'rotate';
+  };
+  attributes: {
+    Nadpis: Schema.Attribute.String;
+    Obrazek: Schema.Attribute.Media<'images'>;
+    Text: Schema.Attribute.RichText;
+    Titulek: Schema.Attribute.String;
+    Tlacitko: Schema.Attribute.Component<'elementy.tlacitko', false>;
+  };
+}
+
 export interface ElementySoubor extends Struct.ComponentSchema {
   collectionName: 'components_elementy_soubors';
   info: {
@@ -781,6 +796,7 @@ declare module '@strapi/strapi' {
       'elementy.organizace-skolniho-roku-polozka': ElementyOrganizaceSkolnihoRokuPolozka;
       'elementy.pole-formulare': ElementyPoleFormulare;
       'elementy.pole-formulare-s-moznostmi': ElementyPoleFormulareSMoznostmi;
+      'elementy.slide': ElementySlide;
       'elementy.soubor': ElementySoubor;
       'elementy.tabulka-bunka': ElementyTabulkaBunka;
       'elementy.tabulka-radek': ElementyTabulkaRadek;
