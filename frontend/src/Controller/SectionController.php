@@ -21,6 +21,10 @@ final class SectionController extends AbstractController
     #[Route(path: '/{path}', name: 'section', requirements: ['path' => '.*'], priority: -10)]
     public function __invoke(string $path): Response
     {
+        if (str_contains($path, '.')) {
+            throw $this->createNotFoundException();
+        }
+
         if ($path === 'home') {
             return $this->redirectToRoute('homepage');
         }
