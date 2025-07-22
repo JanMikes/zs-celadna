@@ -497,11 +497,6 @@ p img {
     max-width: 100%;
 }
 
-.column-karta-s-argumenty {
-    flex: 1 1 calc((100% - 6rem) / 5);
-    width: 100%;
-}
-
 .custom-badge-btn-full {
     width: 100% !important;
     border-radius: 0 !important;
@@ -617,6 +612,7 @@ p img {
 
 .organizace-skolniho-roku-text {
     padding-top: 3px;
+    font-weight: 500;
 }
 
 .green-cell span {
@@ -766,4 +762,23 @@ a.glightbox::before {
 /* hover state */
 a.glightbox:hover::before {
     opacity: 1;
+}
+
+
+.column-tipy-na-vylet {
+    flex: 1 1 calc((100% - 6rem) / 5);
+    width: 100%;
+}
+
+.column-tipy-na-vylet img {
+    max-height: 150px;
+}
+
+.column-karta-s-argumenty {
+    flex: 1 1 calc((100% - 6rem) / 4);
+    max-width: 250px;
+}
+
+.column-karta-s-argumenty img {
+    max-height: 150px;
 }
