@@ -279,6 +279,12 @@ h1 {
     display: inline-block;
     font-weight: bold;
     border: 0;
+    border-radius: 4px;
+}
+
+.custom-badge:hover {
+    background: var(--bs-primary);
+    transition: all .4s ease;
 }
 
 .custom-badge.custom-badge-secondary {
@@ -313,10 +319,11 @@ hr.hr {
 
 .button-style-1 a, .button-style-1 {
     text-decoration: none;
-    background: var(--bs-secondary);
+    background: #17375F;
     padding: 9px 27px;
     color: #fff;
     border: 0;
+    border-radius: 4px;
 }
 
 .button-style-2 a {
@@ -326,7 +333,7 @@ hr.hr {
 .column-dlazdice {
     width: 224px;
     padding: 20px 15px 15px 15px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-weight: bold;
     text-decoration: none;
     color: var(--bs-primary);
@@ -499,7 +506,7 @@ p img {
 
 .custom-badge-btn-full {
     width: 100% !important;
-    border-radius: 0 !important;
+    border-radius: 4px !important;
     padding: 6px 10px !important;
 }
 
@@ -588,15 +595,23 @@ p img {
 }
 
 .faq-question {
-    background: var(--bs-primary);
-    color: #fff;
-    padding: 5px 10px;
+    color: #17375F;
+    padding: 5px 0 20px;
     font-size: 20px;
     font-weight: bold;
+    border-bottom: 1px solid #CBCBCB;
 }
 
 .faq-question i {
     margin-left: 10px;
+    background: #4085C6;
+    color: #fff;
+    padding: 0 5px;
+    border-radius: 4px;
+}
+
+.faq-question.collapsed i {
+    background: #17375F !important;
 }
 
 .faq-component > .mb-4:last-child {
