@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace CeladnaZS\Web\Services\Strapi;
 
+use CeladnaZS\Web\Value\Content\Data\HomepageData;
 use Psr\Clock\ClockInterface;
 use CeladnaZS\Web\Value\Content\Data\AktualitaData;
 use CeladnaZS\Web\Value\Content\Data\KategorieUredniDesky;
@@ -219,6 +220,18 @@ readonly final class StrapiContent
 
         return SekceData::createFromStrapiResponse(
             $strapiResponse['data'][0] ?? throw new NotFound
+        );
+    }
+
+    public function getHomepageData(): HomepageData
+    {
+        /** @var array{data: array<SekceDataArray>} $strapiResponse */
+        $strapiResponse = $this->strapiClient->getApiResource('homepage',
+            populateLevel: 4,
+        );
+
+        return HomepageData::createFromStrapiResponse(
+            $strapiResponse['data'] ?? throw new NotFound
         );
     }
 }

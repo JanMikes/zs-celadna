@@ -25,8 +25,15 @@ final class HomepageController extends AbstractController
             $section = null;
         }
 
+        try {
+            $homepageData = $this->content->getHomepageData();
+        } catch (ClientException) {
+            $homepageData = null;
+        }
+
         return $this->render('homepage.html.twig', [
             'section' => $section,
+            'homepage' => $homepageData,
         ]);
     }
 }

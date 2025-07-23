@@ -802,3 +802,56 @@ a.glightbox:hover::before {
 .column-karta-s-argumenty img {
     max-height: 150px;
 }
+
+.carousel-item {
+    height: 600px;
+}
+
+.slide-title {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    border-left: 6px solid var(--bs-secondary);
+    padding-left: 14px;
+}
+
+.slide-heading {
+    font-weight: 900;
+    color: var(--bs-primary);
+    font-size: 40px;
+}
+
+.slide-text {
+
+}
+
+.slide-image {
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: #fff;
+    color: #000;
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -30px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: #000;
+}
+
+.carousel-control-prev {
+    left: 40px;
+}
+
+.carousel-control-next {
+    right: 40px;
+}
