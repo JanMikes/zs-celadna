@@ -4,7 +4,7 @@
             <div class="card-doctor p-4">
 
                 {% if vizitka.lides %}
-                    <h4 class="mt-0">
+                    <h4 class="mt-0 fw-bold">
                         {% for clovek in vizitka.lides %}
                             {% if not loop.first %}<br>{% endif %}{{ clovek.Jmeno }}
                         {% endfor %}
