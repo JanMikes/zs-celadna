@@ -15,7 +15,7 @@ use DateTimeImmutable;
  *     Poradatel: null|string,
  *     Popis: null|string,
  *     Fotka: null|ImageDataArray,
- *     Aktualita: null|ImageDataArray,
+ *     Aktualita: null|AktualitaDataArray,
  * }
  */
 readonly final class KalendarAkciData
