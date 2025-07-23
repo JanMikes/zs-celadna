@@ -11,7 +11,7 @@
                         {% for slide in homepage.Slider %}
                             <div class="carousel-item {% if loop.first %}active{% endif %}">
                                 <div class="row h-100">
-                                    <div class="col-6 d-flex flex-column justify-content-center">
+                                    <div class="col-6 d-flex flex-column justify-content-center pe-4">
                                         {% if slide.Titulek %}
                                             <p class="slide-title">{{ slide.Titulek }}</p>
                                         {% endif %}
@@ -56,12 +56,12 @@
 
     {% if homepage.Karty %}
         <div class="container">
-            <div class="row gx-0 homepage-karty mb-4">
+            <div class="row gx-0 homepage-karty mb-4 align-items-stretch">
                 {% for karta in homepage.Karty %}
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4 d-flex">
                         {% if karta.Tlacitko %}
-                            <twig:Odkaz data="{{ karta.Tlacitko.Odkaz }}">
-                                <div class="column-homepage-karta d-flex flex-row align-items-start text-start p-4">
+                            <twig:Odkaz data="{{ karta.Tlacitko.Odkaz }}" class="d-flex flex-row h-100 w-100">
+                                <div class="column-homepage-karta d-flex align-items-start text-start p-4 w-100">
                                     {% if karta.Obrazek %}
                                         <img class="img-fluid me-3" src="{{ karta.Obrazek.url }}" alt="">
                                     {% endif %}
