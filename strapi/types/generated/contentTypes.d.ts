@@ -597,6 +597,7 @@ export interface ApiKalendarAkciKalendarAkci
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Datum: Schema.Attribute.DateTime;
+    Fotka: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -604,6 +605,7 @@ export interface ApiKalendarAkciKalendarAkci
     > &
       Schema.Attribute.Private;
     Nazev: Schema.Attribute.String;
+    Popis: Schema.Attribute.RichText;
     Poradatel: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
