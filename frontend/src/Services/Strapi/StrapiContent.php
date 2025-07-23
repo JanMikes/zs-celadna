@@ -28,6 +28,7 @@ use CeladnaZS\Web\Value\Content\Data\TagData;
  * @phpstan-import-type ImageDataArray from ImageData
  * @phpstan-import-type MenuDataArray from MenuData
  * @phpstan-import-type SekceDataArray from SekceData
+ * @phpstan-import-type HomepageDataArray from HomepageData
  * @phpstan-import-type TagDataArray from TagData
  * @phpstan-import-type UredniDeskaDataArray from UredniDeskaData
  * @phpstan-import-type KategorieUredniDeskyDataArray from KategorieUredniDeskyData
@@ -225,13 +226,13 @@ readonly final class StrapiContent
 
     public function getHomepageData(): HomepageData
     {
-        /** @var array{data: array<SekceDataArray>} $strapiResponse */
+        /** @var array{data: HomepageDataArray} $strapiResponse */
         $strapiResponse = $this->strapiClient->getApiResource('homepage',
             populateLevel: 5,
         );
 
         return HomepageData::createFromStrapiResponse(
-            $strapiResponse['data'] ?? throw new NotFound
+            $strapiResponse['data']
         );
     }
 }

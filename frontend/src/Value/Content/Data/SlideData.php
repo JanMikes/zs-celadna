@@ -11,7 +11,7 @@ namespace CeladnaZS\Web\Value\Content\Data;
  *      Titulek: null|string,
  *      Nadpis: null|string,
  *      Text: null|string,
- *      Tlacitko: null|TlacitkoData,
+ *      Tlacitko: null|TlacitkoDataArray,
  *      Obrazek: null|ImageDataArray,
  *  }
  */
