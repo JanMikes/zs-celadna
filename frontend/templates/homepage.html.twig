@@ -11,17 +11,17 @@
                         {% for slide in homepage.Slider %}
                             <div class="carousel-item {% if loop.first %}active{% endif %}">
                                 <div class="row h-100">
-                                    <div class="col-6 d-flex flex-column justify-content-center pe-4">
+                                    <div class="col-6 d-flex flex-column justify-content-center pe-5">
                                         {% if slide.Titulek %}
-                                            <p class="slide-title">{{ slide.Titulek }}</p>
+                                            <p class="slide-title mb-4">{{ slide.Titulek }}</p>
                                         {% endif %}
 
                                         {% if slide.Nadpis %}
-                                            <p class="slide-heading">{{ slide.Nadpis }}</p>
+                                            <p class="slide-heading mb-4">{{ slide.Nadpis }}</p>
                                         {% endif %}
 
                                         {% if slide.Text %}
-                                            <p class="slide-text mt-4">{{ slide.Text|markdown_to_html|newlines }}</p>
+                                            <div class="slide-text">{{ slide.Text|markdown_to_html|newlines }}</div>
                                         {% endif %}
 
                                         {% if slide.Tlacitko %}
@@ -61,21 +61,23 @@
                     <div class="col-12 col-md-4 d-flex">
                         {% if karta.Tlacitko %}
                             <twig:Odkaz data="{{ karta.Tlacitko.Odkaz }}" class="d-flex flex-row h-100 w-100">
-                                <div class="column-homepage-karta d-flex align-items-start text-start p-4 w-100">
-                                    {% if karta.Obrazek %}
-                                        <img class="img-fluid me-3" src="{{ karta.Obrazek.url }}" alt="">
-                                    {% endif %}
-
-                                    <div class="card-content flex-fill d-flex flex-column justify-content-center">
-                                        {% if karta.Nadpis %}
-                                            <h4 class="h5 mt-0 mb-2">{{ karta.Nadpis }}</h4>
+                                <div class="column-homepage-karta w-100 h-100">
+                                    <div class="column-homepage-karta-inner d-flex align-items-start text-start p-4 h-100 w-100">
+                                        {% if karta.Obrazek %}
+                                            <img class="img-fluid me-3" src="{{ karta.Obrazek.url }}" alt="">
                                         {% endif %}
 
-                                        {% if karta.Text %}
-                                            <p class="small mb-0">
-                                                {{ karta.Text|nl2br }}
-                                            </p>
-                                        {% endif %}
+                                        <div class="card-content flex-fill d-flex flex-column justify-content-center">
+                                            {% if karta.Nadpis %}
+                                                <h4 class="h5 mt-0 mb-2">{{ karta.Nadpis }}</h4>
+                                            {% endif %}
+
+                                            {% if karta.Text %}
+                                                <p class="small mb-0">
+                                                    {{ karta.Text|nl2br }}
+                                                </p>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
 

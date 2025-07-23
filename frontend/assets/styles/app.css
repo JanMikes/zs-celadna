@@ -859,9 +859,28 @@ a.glightbox:hover::before {
 }
 
 .column-homepage-karta {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px 15px 0 0;
+}
+
+.column-homepage-karta-inner {
     background: #fff;
     border-radius: 15px 15px 0 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+    position: relative;
+}
+
+.homepage-karty > div:nth-child(2) .column-homepage-karta-inner {
+    background: var(--bs-secondary);
+}
+
+.homepage-karty > div:nth-child(2) .column-homepage-karta-inner {
+    background: var(--bs-primary);
+    color: #fff;
+}
+
+.homepage-karty > div:nth-child(2) .column-homepage-karta-inner h4 {
+    color: #fff;
 }
 
 .column-homepage-karta img {
@@ -873,6 +892,7 @@ a.glightbox:hover::before {
 .homepage-karty {
     position: relative;
     z-index: 3;
+    margin-top: -15px;
 }
 
 .column-homepage-karta .card-content {
@@ -883,8 +903,9 @@ a.glightbox:hover::before {
     text-decoration: none;
 }
 
-.homepage-karty a:hover .column-homepage-karta {
-    background: var(--bs-secondary);
+.homepage-karty a:hover .column-homepage-karta-inner {
+    background: var(--bs-secondary) !important;
+    transition: all .4s ease;
 }
 
 .homepage-karty a:hover h4 {
