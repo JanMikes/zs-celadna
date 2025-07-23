@@ -419,11 +419,11 @@ textarea:hover {
 }
 
 .section-content h2, .section-content h3, .section-content h4 {
-    font-weight: 900 !important;
+    font-weight: 900;
 }
 
 .section-content h5, .section-content h6 {
-    font-weight: 700 !important;
+    font-weight: 700;
 }
 
 
@@ -926,4 +926,12 @@ a.glightbox:hover::before {
 
 .homepage-akce-content {
     background: #fff;
+}
+
+.fw-heading {
+    font-weight: 900 !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
 }

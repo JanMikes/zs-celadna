@@ -69,7 +69,7 @@
 
                                         <div class="card-content flex-fill d-flex flex-column justify-content-center">
                                             {% if karta.Nadpis %}
-                                                <h4 class="h5 mt-0 mb-2">{{ karta.Nadpis }}</h4>
+                                                <h4 class="h5 mt-0 mb-2 fw-bold">{{ karta.Nadpis }}</h4>
                                             {% endif %}
 
                                             {% if karta.Text %}
@@ -91,7 +91,7 @@
 
     {% if kalendar_akci %}
         <div class="container my-5">
-            <h2 class="with-border mb-4">Akce</h2>
+            <h2 class="with-border mb-4 fw-heading">Akce</h2>
 
             <div class="row">
                 {% for akce in kalendar_akci %}
@@ -105,7 +105,7 @@
 
                             <div class="homepage-akce-content p-4">
                                 {% if akce.Nazev %}
-                                    <h4>{{ akce.Nazev }}</h4>
+                                    <h4 class="fw-bold">{{ akce.Nazev }}</h4>
                                 {% endif %}
 
                                 {% if akce.Datum %}
