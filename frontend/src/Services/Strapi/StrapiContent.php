@@ -227,7 +227,7 @@ readonly final class StrapiContent
     {
         /** @var array{data: array<SekceDataArray>} $strapiResponse */
         $strapiResponse = $this->strapiClient->getApiResource('homepage',
-            populateLevel: 4,
+            populateLevel: 5,
         );
 
         return HomepageData::createFromStrapiResponse(

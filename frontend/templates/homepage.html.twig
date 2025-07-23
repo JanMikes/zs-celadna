@@ -6,10 +6,10 @@
     {% if homepage and homepage.Slider %}
         <div class="carousel-wrapper position-relative">
             <div class="container position-relative">
-                {% for slide in homepage.Slider %}
-                    <div id="home-carousel" class="carousel {% if loop.first %}slide{% endif %}">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
+                <div id="home-carousel" class="carousel slide carousel-fade">
+                    <div class="carousel-inner">
+                        {% for slide in homepage.Slider %}
+                            <div class="carousel-item {% if loop.first %}active{% endif %}">
                                 <div class="row h-100">
                                     <div class="col-6 d-flex flex-column justify-content-center">
                                         {% if slide.Titulek %}
@@ -39,9 +39,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
+                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
                 <i class="bi-chevron-left bi-large" aria-hidden="true"></i>

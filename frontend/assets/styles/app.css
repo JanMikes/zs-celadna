@@ -805,6 +805,7 @@ a.glightbox:hover::before {
 
 .carousel-item {
     height: 600px;
+    background-color: #EDEDED;
 }
 
 .slide-title {
