@@ -87,6 +87,36 @@
         </div>
     {% endif %}
 
+    {% if kalendar_akci %}
+        <div class="container my-5">
+            <h2 class="with-border mb-4">Akce</h2>
+
+            <div class="row">
+                {% for akce in kalendar_akci %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="homepage-akce">
+                            {% if akce.Fotka %}
+                                <div class="homepage-akce-image">
+                                    <img class="img-fluid me-3" src="{{ akce.Fotka.url }}" alt="">
+                                </div>
+                            {% endif %}
+
+                            <div class="homepage-akce-content p-4">
+                                {% if akce.Nazev %}
+                                    <h4>{{ akce.Nazev }}</h4>
+                                {% endif %}
+
+                                {% if akce.Datum %}
+                                    <p class="mb-0 small">{{ akce.Datum|date('d.m.Y') }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
     {% if section %}
         <div class="container pt-3 pb-5 section-content">
             <div class="row">

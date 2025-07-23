@@ -5,14 +5,13 @@ declare(strict_types=1);
 namespace CeladnaZS\Web\Services\Strapi;
 
 use CeladnaZS\Web\Value\Content\Data\HomepageData;
+use CeladnaZS\Web\Value\Content\Data\KalendarAkciData;
 use Psr\Clock\ClockInterface;
 use CeladnaZS\Web\Value\Content\Data\AktualitaData;
-use CeladnaZS\Web\Value\Content\Data\KategorieUredniDesky;
 use CeladnaZS\Web\Value\Content\Data\KategorieUredniDeskyData;
 use CeladnaZS\Web\Value\Content\Data\MenuData;
 use CeladnaZS\Web\Value\Content\Data\SekceData;
 use CeladnaZS\Web\Value\Content\Data\UredniDeskaData;
-use CeladnaZS\Web\Value\Content\Exception\InvalidKategorie;
 use CeladnaZS\Web\Value\Content\Exception\NotFound;
 use CeladnaZS\Web\Value\Content\Data\ClovekData;
 use CeladnaZS\Web\Value\Content\Data\DlazdiceData;
@@ -32,6 +31,7 @@ use CeladnaZS\Web\Value\Content\Data\TagData;
  * @phpstan-import-type TagDataArray from TagData
  * @phpstan-import-type UredniDeskaDataArray from UredniDeskaData
  * @phpstan-import-type KategorieUredniDeskyDataArray from KategorieUredniDeskyData
+ * @phpstan-import-type KalendarAkciDataArray from KalendarAkciData
  */
 readonly final class StrapiContent
 {
@@ -232,6 +232,25 @@ readonly final class StrapiContent
         );
 
         return HomepageData::createFromStrapiResponse(
+            $strapiResponse['data']
+        );
+    }
+
+    /**
+     * @return array<KalendarAkciData>
+     */
+    public function getKalendarAkciData(): array
+    {
+        /** @var array{data: array<KalendarAkciDataArray>} $strapiResponse */
+        $strapiResponse = $this->strapiClient->getApiResource('kalendar-akcis',
+            populateLevel: 5,
+            pagination: [
+                'limit' => 3,
+                'start' => 0,
+            ],
+        );
+
+        return KalendarAkciData::createManyFromStrapiResponse(
             $strapiResponse['data']
         );
     }

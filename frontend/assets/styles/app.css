@@ -890,3 +890,19 @@ a.glightbox:hover::before {
 .homepage-karty a:hover h4 {
     color: #fff;
 }
+
+.homepage-akce {
+
+}
+
+.homepage-akce-image {
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    object-position: center;
+    height: 225px;
+    overflow: hidden;
+}
+
+.homepage-akce-content {
+    background: #fff;
+}
