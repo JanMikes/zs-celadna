@@ -819,7 +819,8 @@ a.glightbox:hover::before {
 .slide-heading {
     font-weight: 900;
     color: var(--bs-primary);
-    font-size: 40px;
+    font-size: 50px;
+    line-height: 65px;
 }
 
 .slide-text {
@@ -855,4 +856,37 @@ a.glightbox:hover::before {
 
 .carousel-control-next {
     right: 40px;
+}
+
+.column-homepage-karta {
+    background: #fff;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.column-homepage-karta img {
+    width: 90px;
+    height: 90px;
+    flex: 0 0 90px;
+}
+
+.homepage-karty {
+    position: relative;
+    z-index: 3;
+}
+
+.column-homepage-karta .card-content {
+    min-width: 0; /* so long text will ellipsis or wrap properly */
+}
+
+.homepage-karty a {
+    text-decoration: none;
+}
+
+.homepage-karty a:hover .column-homepage-karta {
+    background: var(--bs-secondary);
+}
+
+.homepage-karty a:hover h4 {
+    color: #fff;
 }
