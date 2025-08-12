@@ -18,7 +18,6 @@ final class HomepageController extends AbstractController
     #[Route(path: '/', name: 'homepage')]
     public function __invoke(): Response
     {
-
         try {
             $section = $this->content->getSekceData('home');
         } catch (ClientException) {

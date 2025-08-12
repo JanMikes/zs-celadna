@@ -24,4 +24,9 @@ return static function (MonologConfig $monologConfig): void {
         ->type('sentry')
         ->level(Level::Warning->value)
         ->hubId(HubInterface::class);
+
+    $monologConfig->handler('stdout')
+        ->type('stream')
+        ->path('php://stdout')
+        ->level(Level::Notice->value);
 };
