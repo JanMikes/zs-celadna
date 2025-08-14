@@ -342,7 +342,8 @@ hr.hr {
 }
 
 .column-dlazdice .img-fluid {
-    max-width: 60%;
+    max-width: 40%;
+    margin-bottom: 0.75rem;
 }
 
 a.column-dlazdice:hover {
