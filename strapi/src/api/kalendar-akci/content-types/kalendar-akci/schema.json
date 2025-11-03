@@ -14,16 +14,14 @@
     "Datum": {
       "type": "datetime"
     },
+    "Datum_do": {
+      "type": "datetime"
+    },
     "Nazev": {
       "type": "string"
     },
     "Poradatel": {
       "type": "string"
-    },
-    "Aktualita": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::aktuality.aktuality"
     },
     "Fotka": {
       "type": "media",
@@ -34,6 +32,43 @@
     },
     "Popis": {
       "type": "richtext"
+    },
+    "Kategorie": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::kalendar-akci-kategorie.kalendar-akci-kategorie"
+    },
+    "Misto_konani": {
+      "type": "string"
+    },
+    "Dokumenty": {
+      "type": "component",
+      "component": "komponenty.soubory-ke-stazeni",
+      "repeatable": false
+    },
+    "Galerie": {
+      "type": "component",
+      "component": "komponenty.galerie",
+      "repeatable": false
+    },
+    "Video_youtube": {
+      "type": "string"
+    },
+    "Fotka_detail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Nazev",
+      "required": true
+    },
+    "Top": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

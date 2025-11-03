@@ -634,6 +634,36 @@ export interface ApiIkonkyIkonky extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiKalendarAkciKategorieKalendarAkciKategorie
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'kalendar_akci_kategories';
+  info: {
+    displayName: 'Kalend\u00E1\u0159 akc\u00ED - kategorie';
+    pluralName: 'kalendar-akci-kategories';
+    singularName: 'kalendar-akci-kategorie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::kalendar-akci-kategorie.kalendar-akci-kategorie'
+    > &
+      Schema.Attribute.Private;
+    Nazev: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Nazev'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiKalendarAkciKalendarAkci
   extends Struct.CollectionTypeSchema {
   collectionName: 'kalendar_akcis';
@@ -646,28 +676,39 @@ export interface ApiKalendarAkciKalendarAkci
     draftAndPublish: false;
   };
   attributes: {
-    Aktualita: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::aktuality.aktuality'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Datum: Schema.Attribute.DateTime;
+    Datum_do: Schema.Attribute.DateTime;
+    Dokumenty: Schema.Attribute.Component<
+      'komponenty.soubory-ke-stazeni',
+      false
+    >;
     Fotka: Schema.Attribute.Media<'images'>;
+    Fotka_detail: Schema.Attribute.Media<'images'>;
+    Galerie: Schema.Attribute.Component<'komponenty.galerie', false>;
+    Kategorie: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::kalendar-akci-kategorie.kalendar-akci-kategorie'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::kalendar-akci.kalendar-akci'
     > &
       Schema.Attribute.Private;
+    Misto_konani: Schema.Attribute.String;
     Nazev: Schema.Attribute.String;
     Popis: Schema.Attribute.RichText;
     Poradatel: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Nazev'> & Schema.Attribute.Required;
+    Top: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Video_youtube: Schema.Attribute.String;
   };
 }
 
@@ -1470,6 +1511,7 @@ declare module '@strapi/strapi' {
       'api::formular.formular': ApiFormularFormular;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::ikonky.ikonky': ApiIkonkyIkonky;
+      'api::kalendar-akci-kategorie.kalendar-akci-kategorie': ApiKalendarAkciKategorieKalendarAkciKategorie;
       'api::kalendar-akci.kalendar-akci': ApiKalendarAkciKalendarAkci;
       'api::kategorie-uredni-desky.kategorie-uredni-desky': ApiKategorieUredniDeskyKategorieUredniDesky;
       'api::lide.lide': ApiLideLide;

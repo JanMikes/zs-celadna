@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kalendar_akci_kategories",
+  "info": {
+    "singularName": "kalendar-akci-kategorie",
+    "pluralName": "kalendar-akci-kategories",
+    "displayName": "Kalendář akcí - kategorie"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nazev": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Nazev",
+      "required": true
+    }
+  }
+}
