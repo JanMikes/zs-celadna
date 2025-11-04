@@ -814,7 +814,7 @@ a.glightbox:hover::before {
 }
 
 .slide-title {
-    color: #000;
+    color: #17375F;
     font-size: 18px;
     font-weight: bold;
     border-left: 6px solid var(--bs-secondary);
@@ -873,6 +873,7 @@ a.glightbox:hover::before {
     border-radius: 15px 15px 0 0;
     z-index: 4;
     position: relative;
+    color: var(--bs-primary);
 }
 
 .homepage-karty > div:nth-child(2) .column-homepage-karta-inner {
@@ -886,6 +887,11 @@ a.glightbox:hover::before {
 
 .homepage-karty > div:nth-child(2) .column-homepage-karta-inner h4 {
     color: #fff;
+}
+
+.homepage-karty > div:nth-child(2) .column-homepage-karta-inner img {
+    color: #fff;
+    fill: #fff;
 }
 
 .column-homepage-karta img {
@@ -911,14 +917,6 @@ a.glightbox:hover::before {
 .homepage-karty a:hover .column-homepage-karta-inner {
     background: var(--bs-secondary) !important;
     transition: all .4s ease;
-}
-
-.homepage-karty a:hover h4 {
-    color: #fff;
-}
-
-.homepage-akce {
-
 }
 
 .homepage-akce-image {
