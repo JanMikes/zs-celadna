@@ -890,6 +890,7 @@ export interface ApiSekceSekce extends Struct.CollectionTypeSchema {
         'komponenty.filtr-tagu',
         'komponenty.bakalari',
         'komponenty.alert',
+        'komponenty.kalendar-akci',
       ]
     > &
       Schema.Attribute.Required &
