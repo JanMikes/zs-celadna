@@ -331,7 +331,7 @@ hr.hr {
 }
 
 .column-dlazdice {
-    width: 224px;
+    width: 100%;
     padding: 20px 15px 15px 15px;
     border-radius: 10px;
     font-weight: bold;
@@ -339,6 +339,30 @@ hr.hr {
     color: var(--bs-primary);
     border: 1px solid #999999;
     transition: all 0.3s;
+}
+
+@media (min-width: 576px) {
+    .column-dlazdice {
+        width: calc((100% - 1rem) / 2);
+    }
+}
+
+@media (min-width: 768px) {
+    .column-dlazdice {
+        width: calc((100% - 2rem) / 3);
+    }
+}
+
+@media (min-width: 992px) {
+    .column-dlazdice {
+        width: calc((100% - 4.5rem) / 4);
+    }
+}
+
+@media (min-width: 1200px) {
+    .column-dlazdice {
+        width: calc((100% - 6rem) / 5);
+    }
 }
 
 .column-dlazdice .img-fluid {
