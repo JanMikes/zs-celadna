@@ -961,6 +961,34 @@ a.glightbox:hover::before {
     transition: all .4s ease;
 }
 
+a .homepage-akce {
+    transition: all .3s ease;
+}
+
+a:hover .homepage-akce {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.025);
+}
+
+.homepage-akce {
+    position: relative;
+}
+
+.kalendar-akci-top-badge {
+    position: absolute;
+    display: block;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    background: var(--bs-secondary);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    z-index: 10;
+}
+
 .homepage-akce-image {
     border-radius: 10px 10px 0 0;
     object-fit: cover;

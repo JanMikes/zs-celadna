@@ -239,19 +239,55 @@ readonly final class StrapiContent
     /**
      * @return array<KalendarAkciData>
      */
-    public function getKalendarAkciData(): array
+    public function getKalendarAkciData(int|null $limit = null): array
     {
+        $now = $this->clock->now();
+
+        $filters = [
+            '$or' => [
+                ['Top' => ['$eq' => true]],
+                ['Datum' => ['$null' => true]],
+                ['Datum' => ['$gte' => $now->format('Y-m-d')]],
+            ],
+        ];
+
+        $pagination = null;
+
+        if ($limit !== null) {
+            $pagination = [
+                'limit' => $limit,
+                'start' => 0,
+            ];
+        }
+
         /** @var array{data: array<KalendarAkciDataArray>} $strapiResponse */
         $strapiResponse = $this->strapiClient->getApiResource('kalendar-akcis',
             populateLevel: 5,
-            pagination: [
-                'limit' => 3,
-                'start' => 0,
+            filters: $filters,
+            pagination: $pagination,
+            sort: [
+                'Top:asc',
+                'Datum:asc'
             ],
         );
 
         return KalendarAkciData::createManyFromStrapiResponse(
             $strapiResponse['data']
+        );
+    }
+
+    public function getDetailAkceData(string $slug): KalendarAkciData
+    {
+        /** @var array{data: array<KalendarAkciDataArray>} $strapiResponse */
+        $strapiResponse = $this->strapiClient->getApiResource('kalendar-akcis',
+            populateLevel: 5,
+            filters: [
+                'slug' => ['$eqi' => $slug],
+            ]
+        );
+
+        return KalendarAkciData::createFromStrapiResponse(
+            $strapiResponse['data'][0] ?? throw new NotFound
         );
     }
 }

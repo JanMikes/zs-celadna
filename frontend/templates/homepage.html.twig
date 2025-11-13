@@ -96,27 +96,48 @@
 
             <div class="row">
                 {% for akce in kalendar_akci %}
-                    <div class="col-sm-6 col-md-4">
-                        <div class="homepage-akce">
-                            {% if akce.Fotka %}
-                                <div class="homepage-akce-image">
-                                    <img class="img-fluid me-3" src="{{ akce.Fotka.url }}" alt="">
-                                </div>
+                    {% if loop.index <= 3 %}
+                        <div class="col-sm-6 col-md-4 mb-3">
+
+                            {% if akce.slug and ((akce.Dokumenty ?? []) or (akce.Galerie ?? []) or akce.Popis or akce.FotkaDetail) %}
+                                <a href="{{ path('detail_akce', {'slug': akce.slug}) }}" class="text-decoration-none h-100">
                             {% endif %}
 
-                            <div class="homepage-akce-content p-4">
-                                {% if akce.Nazev %}
-                                    <h4 class="fw-bold h5">{{ akce.Nazev }}</h4>
+                            <div class="homepage-akce">
+                                {% if akce.Top %}
+                                    <span class="kalendar-akci-top-badge">TOP</span>
                                 {% endif %}
 
-                                {% if akce.Datum %}
-                                    <p class="mb-0 small">{{ akce.Datum|date('d.m.Y') }}</p>
+                                {% if akce.Fotka %}
+                                    <div class="homepage-akce-image">
+                                        <img class="img-fluid me-3" src="{{ akce.Fotka.url }}" alt="">
+                                    </div>
                                 {% endif %}
+
+                                <div class="homepage-akce-content p-4">
+                                    {% if akce.Nazev %}
+                                        <h4 class="fw-bold h5">{{ akce.Nazev }}</h4>
+                                    {% endif %}
+
+                                    {% if akce.Datum %}
+                                        <p class="mb-0 small">{{ akce.Datum|date('d.m.Y') }}</p>
+                                    {% endif %}
+                                </div>
                             </div>
+
+                            {% if akce.slug and (akce.Dokumenty ?? []) or (akce.Galerie ?? []) or akce.Popis or akce.FotkaDetail %}
+                                </a>
+                            {% endif %}
                         </div>
-                    </div>
+                    {% endif %}
                 {% endfor %}
             </div>
+
+            {% if kalendar_akci|length > 3 %}
+                <p class="text-end mt-3">
+                    <a class="button-style-2" href="{{ path('kalendar_akci') }}">Všechny akce</a>
+                </p>
+            {% endif %}
         </div>
     {% endif %}
 
