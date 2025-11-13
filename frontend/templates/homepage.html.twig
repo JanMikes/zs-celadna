@@ -5,11 +5,16 @@
 {% block content %}
     {% if homepage and homepage.Slider %}
         <div class="carousel-wrapper position-relative">
-            <div class="container position-relative">
-                <div id="home-carousel" class="carousel slide carousel-fade">
-                    <div class="carousel-inner">
-                        {% for slide in homepage.Slider %}
-                            <div class="carousel-item {% if loop.first %}active{% endif %}">
+
+            <div id="home-carousel" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    {% for slide in homepage.Slider %}
+                        <div class="carousel-item position-relative {% if loop.first %}active{% endif %}">
+                            {% if slide.Obrazek %}
+                                <div class="carousel-image" style="background-image: url('{{ slide.Obrazek.url }}');"></div>
+                            {% endif %}
+
+                            <div class="container h-100">
                                 <div class="row h-100">
                                     <div class="col-6 d-flex flex-column justify-content-center pe-5">
                                         {% if slide.Titulek %}
@@ -32,17 +37,13 @@
                                             </p>
                                         {% endif %}
                                     </div>
-                                    <div class="col-6 overflow-hidden p-0">
-                                        {% if slide.Obrazek %}
-                                            <img src="{{ slide.Obrazek.url }}" class="slide-image w-100 h-100" alt="{{ slide.Nadpis }}">
-                                        {% endif %}
-                                    </div>
                                 </div>
                             </div>
-                        {% endfor %}
-                    </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
                 <i class="bi-chevron-left bi-large" aria-hidden="true"></i>
                 <span class="visually-hidden">Previous</span>

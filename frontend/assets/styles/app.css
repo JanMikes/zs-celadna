@@ -813,6 +813,16 @@ a.glightbox:hover::before {
     background-color: #EDEDED;
 }
 
+.carousel-image {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
 .slide-title {
     color: #17375F;
     font-size: 18px;
@@ -903,7 +913,7 @@ a.glightbox:hover::before {
 .homepage-karty {
     position: relative;
     z-index: 3;
-    margin-top: -15px;
+    margin-top: -45px;
 }
 
 .column-homepage-karta .card-content {
