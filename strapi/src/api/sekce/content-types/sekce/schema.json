@@ -60,8 +60,7 @@
         "komponenty.mapa",
         "komponenty.filtr-tagu",
         "komponenty.bakalari",
-        "komponenty.alert",
-        "komponenty.kalendar-akci"
+        "komponenty.alert"
       ],
       "required": true,
       "min": 1
