@@ -10,28 +10,6 @@ use Twig\TwigFilter;
 final class InitialsExtension extends AbstractExtension
 {
     /**
-     * Common Czech academic titles that should be removed before extracting initials
-     */
-    private const ACADEMIC_TITLES = [
-        'Mgr.',
-        'Ing.',
-        'Bc.',
-        'MUDr.',
-        'JUDr.',
-        'PhDr.',
-        'RNDr.',
-        'PaedDr.',
-        'ThLic.',
-        'ThDr.',
-        'Ph.D.',
-        'CSc.',
-        'DrSc.',
-        'Dr.',
-        'prof.',
-        'doc.',
-    ];
-
-    /**
      * @return array<TwigFilter>
      */
     public function getFilters(): array
@@ -48,16 +26,17 @@ final class InitialsExtension extends AbstractExtension
      * - "Jan Mikeš" -> "JM"
      * - "Mgr. Jan Mikeš" -> "JM"
      * - "prof. MUDr. Jan Mikeš, Ph.D." -> "JM"
+     * - "Prof., Mgr. Jan Mikeš, PHDR" -> "JMP"
      */
     public function extractInitials(string $fullName): string
     {
-        // Remove academic titles
-        $nameWithoutTitles = $this->removeAcademicTitles($fullName);
+        // Remove commas
+        $cleaned = str_replace(',', '', $fullName);
 
-        // Split by spaces and filter out empty parts
+        // Split by spaces and filter out empty parts and words containing dots
         $nameParts = array_filter(
-            array_map('trim', explode(' ', $nameWithoutTitles)),
-            fn(string $part) => $part !== ''
+            array_map('trim', explode(' ', $cleaned)),
+            fn(string $part) => $part !== '' && !str_contains($part, '.')
         );
 
         // Extract first letter of each part and convert to uppercase
@@ -67,22 +46,5 @@ final class InitialsExtension extends AbstractExtension
         );
 
         return implode('', $initials);
-    }
-
-    private function removeAcademicTitles(string $name): string
-    {
-        $result = $name;
-
-        foreach (self::ACADEMIC_TITLES as $title) {
-            $result = str_replace($title, '', $result);
-        }
-
-        // Remove commas that might be left after removing titles
-        $result = str_replace(',', '', $result);
-
-        // Clean up multiple spaces
-        $result = preg_replace('/\s+/', ' ', $result);
-
-        return trim($result ?? '');
     }
 }
