@@ -796,7 +796,7 @@ a.glightbox img {
 }
 
 /* overlay + text */
-a.glightbox::before {
+a.glightbox img::before {
     content: "Klikněte pro zvětšení";
     position: absolute;
     top: 0;
