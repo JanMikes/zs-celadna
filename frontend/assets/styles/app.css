@@ -165,18 +165,19 @@ body {
 footer {
     background-color: #005E56;
     color: #fff;
-    background-repeat: no-repeat;
-    background-image:
-        url('../images/footer-1.png'),
+
+    @media (min-width: 768px) {
+        background-repeat: no-repeat;
+        background-image: url('../images/footer-1.png'),
         url('../images/footer-2.png'),
         url('../images/footer-3.png'),
         url('../images/footer-4.png');
-    background-position:
-        left bottom,
+        background-position: left bottom,
         20% bottom,
         65% calc(100% - 10px),
         right 40px;
-    padding-bottom: 150px;
+        padding-bottom: 150px;
+    }
 }
 
 footer a {
