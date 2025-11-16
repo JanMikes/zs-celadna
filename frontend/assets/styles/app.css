@@ -236,7 +236,7 @@ footer h5 {
 h1 {
     border-left: 6px solid var(--bs-secondary);
     padding-left: 14px;
-    line-height: 100%;
+    line-height: 125%;
     font-weight: 900 !important;
 }
 
