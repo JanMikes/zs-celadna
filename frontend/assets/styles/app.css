@@ -222,15 +222,15 @@ footer h5 {
 }
 
 .content-wrapper {
-    background-repeat: no-repeat;
-    background-image:
-        url('../images/body-3.png'),
+    @media (min-width: 768px) {
+        background-repeat: no-repeat;
+        background-image: url('../images/body-3.png'),
         url('../images/body-1.png'),
         url('../images/body-2.png');
-    background-position:
-        calc(100% - 30px) 75%,
+        background-position: calc(100% - 30px) 75%,
         right -130px,
         left 30%;
+    }
 }
 
 h1 {
