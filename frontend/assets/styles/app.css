@@ -970,6 +970,12 @@ a.glightbox:hover::before {
     }
 }
 
+.homepage-karty > div {
+    @media (max-width: 767px) {
+        min-height: 150px;
+    }
+}
+
 .column-homepage-karta .card-content {
     min-width: 0; /* so long text will ellipsis or wrap properly */
 }
