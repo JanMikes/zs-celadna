@@ -14,15 +14,15 @@
                                 <div class="carousel-image" style="background-image: url('{{ slide.Obrazek.url }}');"></div>
                             {% endif %}
 
-                            <div class="container h-100">
-                                <div class="row h-100">
-                                    <div class="col-6 d-flex flex-column justify-content-center pe-5">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center pt-4 pt-md-5 pe-md-5">
                                         {% if slide.Titulek %}
-                                            <p class="slide-title mb-4">{{ slide.Titulek }}</p>
+                                            <p class="slide-title mb-3 mb-md-4">{{ slide.Titulek }}</p>
                                         {% endif %}
 
                                         {% if slide.Nadpis %}
-                                            <p class="slide-heading mb-4">{{ slide.Nadpis }}</p>
+                                            <p class="slide-heading mb-3 mb-md-4">{{ slide.Nadpis }}</p>
                                         {% endif %}
 
                                         {% if slide.Text %}
@@ -30,7 +30,7 @@
                                         {% endif %}
 
                                         {% if slide.Tlacitko %}
-                                            <p class="mb-0 mt-4">
+                                            <p class="mb-0 mt-3 md-md-4">
                                                 <span class="d-inline-block my-2 button-style-1">
                                                     <twig:Odkaz data="{{ slide.Tlacitko.Odkaz }}">{{ slide.Tlacitko.Text }}</twig:Odkaz>
                                                 </span>
