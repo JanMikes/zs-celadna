@@ -429,16 +429,22 @@ textarea:hover {
 }
 
 .placeholder-icon-person {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     display: block;
     background-size: contain;
     background-color: #eee;
     font-size: 27px;
     color: #888;
-    line-height: 90px;
+    line-height: 70px;
     text-align: center;
     font-weight: bold;
+
+    @media (min-width: 768px) {
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+    }
 }
 
 /*
