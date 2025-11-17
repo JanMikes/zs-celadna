@@ -1,5 +1,5 @@
 <div data-controller="gallery" class="margin-component">
-    <div class="row row-cols-6 g-3">
+    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
         {% for obrazek in data.Obrazek %}
             {% if obrazek.Obrazek %}
                 <div class="col {{ loop.index > data.Pocet_zobrazenych ? 'd-none' }}" data-gallery-target="item">
