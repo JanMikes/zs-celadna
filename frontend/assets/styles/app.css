@@ -333,7 +333,7 @@ hr.hr {
 
 .column-dlazdice {
     width: 100%;
-    padding: 20px 15px 15px 15px;
+    padding: 10px 8px 5px 8px;
     border-radius: 10px;
     font-weight: bold;
     text-decoration: none;
@@ -342,9 +342,20 @@ hr.hr {
     transition: all 0.3s;
 }
 
+.column-dlazdice .img-fluid {
+    width: 30%;
+    max-width: 80px;
+    margin-bottom: 0.75rem;
+}
+
 @media (min-width: 576px) {
     .column-dlazdice {
         width: calc((100% - 1rem) / 2);
+        padding: 20px 15px 15px 15px;
+    }
+
+    .column-dlazdice .img-fluid {
+        width: 40%;
     }
 }
 
@@ -352,11 +363,19 @@ hr.hr {
     .column-dlazdice {
         width: calc((100% - 2rem) / 3);
     }
+
+    .section-with-panel .column-dlazdice {
+        width: calc((100% - 1rem) / 2);
+    }
 }
 
 @media (min-width: 992px) {
     .column-dlazdice {
         width: calc((100% - 4.5rem) / 4);
+    }
+
+    .section-with-panel .column-dlazdice {
+        width: calc((100% - 3rem) / 3);
     }
 }
 
@@ -364,11 +383,10 @@ hr.hr {
     .column-dlazdice {
         width: calc((100% - 6rem) / 5);
     }
-}
 
-.column-dlazdice .img-fluid {
-    max-width: 40%;
-    margin-bottom: 0.75rem;
+    .section-with-panel .column-dlazdice {
+        width: calc((100% - 4.5rem) / 4);
+    }
 }
 
 a.column-dlazdice:hover {
