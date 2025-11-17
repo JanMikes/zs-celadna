@@ -3,7 +3,7 @@
         {% for soubor in data.Soubor %}
             <div class="{{ data.Pocet_sloupcu == 2 ? 'col-sm-6' : 'col-sm-12' }}">
                 <a href="{{ soubor.Soubor.url }}" class="text-decoration-none mt-3 d-flex gap-3" target="_blank">
-                    <i class="bi-file-earmark-image fs-4"></i>
+                    <i class="bi-file-earmark-image flex-shrink-0 fs-4"></i>
                     <div class="d-flex flex-column">
                         <strong>{{ soubor.Nadpis }}</strong>
                         <div>
