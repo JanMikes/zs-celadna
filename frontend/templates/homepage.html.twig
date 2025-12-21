@@ -9,7 +9,7 @@
             <div id="home-carousel" class="carousel slide carousel-fade">
                 <div class="carousel-inner">
                     {% for slide in homepage.Slider %}
-                        <div class="carousel-item position-relative {% if loop.first %}active{% endif %}">
+                        <div class="carousel-item position-relative {% if loop.first %}active{% endif %}" style="background: #f6f6f6;">
                             {% if slide.Obrazek %}
                                 <div class="carousel-image" style="background-image: url('{{ slide.Obrazek.url }}');"></div>
                             {% endif %}
