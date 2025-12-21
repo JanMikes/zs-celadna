@@ -12,6 +12,7 @@ namespace CeladnaZS\Web\Value\Content\Data;
  *     Umisteni_nadpisu: null|string,
  *     Text: null|string,
  *     Obrazek: null|ImageDataArray,
+ *     Obrazek_hover: null|ImageDataArray,
  *     Tlacitko: null|TlacitkoDataArray,
  *  }
  */
@@ -25,6 +26,7 @@ readonly final class KartaSArgumentyData
         public null|string $Umisteni_nadpisu,
         public null|string $Text,
         public null|ImageData $Obrazek,
+        public null|ImageData $ObrazekHover,
         public null|TlacitkoData $Tlacitko,
     ) {}
 
@@ -38,6 +40,7 @@ readonly final class KartaSArgumentyData
             Umisteni_nadpisu: $data['Umisteni_nadpisu'],
             Text: $data['Text'],
             Obrazek: $data['Obrazek'] !== null ? ImageData::createFromStrapiResponse($data['Obrazek']) : null,
+            ObrazekHover: $data['ObrazekHover'] !== null ? ImageData::createFromStrapiResponse($data['ObrazekHover']) : null,
             Tlacitko: $data['Tlacitko'] !== null ? TlacitkoData::createFromStrapiResponse($data['Tlacitko']) : null,
         );
     }

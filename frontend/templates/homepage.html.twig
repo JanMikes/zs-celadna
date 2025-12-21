@@ -65,7 +65,12 @@
                                 <div class="column-homepage-karta w-100 h-100">
                                     <div class="column-homepage-karta-inner d-flex align-items-start text-start p-4 h-100 w-100">
                                         {% if karta.Obrazek %}
-                                            <img class="img-fluid me-3" src="{{ karta.Obrazek.url }}" alt="">
+                                            <span class="karta-img-wrapper me-3">
+                                                <img class="img-fluid karta-img-default" src="{{ karta.Obrazek.url }}" alt="">
+                                                {% if karta.Obrazek_hover %}
+                                                    <img class="img-fluid karta-img-hover" src="{{ karta.Obrazek_hover.url }}" alt="">
+                                                {% endif %}
+                                            </span>
                                         {% endif %}
 
                                         <div class="card-content flex-fill d-flex flex-column justify-content-center">

@@ -993,6 +993,32 @@ a.glightbox:hover::before {
     flex: 0 0 90px;
 }
 
+.karta-img-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    flex: 0 0 90px;
+}
+
+.karta-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.karta-img-wrapper .karta-img-hover {
+    opacity: 0;
+}
+
+.homepage-karty a:hover .karta-img-wrapper .karta-img-default {
+    opacity: 0;
+}
+
+.homepage-karty a:hover .karta-img-wrapper .karta-img-hover {
+    opacity: 1;
+}
+
 .homepage-karty {
     position: relative;
     z-index: 3;
