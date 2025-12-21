@@ -119,6 +119,7 @@ export interface ElementyKartaSArgumenty extends Struct.ComponentSchema {
   attributes: {
     Nadpis: Schema.Attribute.String;
     Obrazek: Schema.Attribute.Media<'images'>;
+    Obrazek_hover: Schema.Attribute.Media<'images'>;
     Text: Schema.Attribute.RichText;
     Tlacitko: Schema.Attribute.Component<'elementy.tlacitko', false>;
     Umisteni_nadpisu: Schema.Attribute.Enumeration<
