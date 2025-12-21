@@ -40,7 +40,7 @@ readonly final class KartaSArgumentyData
             Umisteni_nadpisu: $data['Umisteni_nadpisu'],
             Text: $data['Text'],
             Obrazek: $data['Obrazek'] !== null ? ImageData::createFromStrapiResponse($data['Obrazek']) : null,
-            ObrazekHover: $data['ObrazekHover'] !== null ? ImageData::createFromStrapiResponse($data['ObrazekHover']) : null,
+            ObrazekHover: $data['Obrazek_hover'] !== null ? ImageData::createFromStrapiResponse($data['Obrazek_hover']) : null,
             Tlacitko: $data['Tlacitko'] !== null ? TlacitkoData::createFromStrapiResponse($data['Tlacitko']) : null,
         );
     }
