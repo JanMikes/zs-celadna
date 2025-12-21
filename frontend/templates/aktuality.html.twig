@@ -29,7 +29,7 @@
                 <a href="{{ path('detail_aktuality', {'slug': aktualita.slug}) }}" class="text-decoration-none">
                     {% if aktualita.Obrazek %}
                         <div class="ratio ratio-4x3 mb-2">
-                            <img class="object-fit-cover" src="{{ aktualita.Obrazek.url }}" alt="" aria-labelledby="aktualita-{{ aktualita.slug }}">
+                            <img class="object-fit-cover rounded" src="{{ aktualita.Obrazek.url }}" alt="" aria-labelledby="aktualita-{{ aktualita.slug }}">
                         </div>
                     {% endif %}
 
