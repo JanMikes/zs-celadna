@@ -67,8 +67,10 @@
                                         {% if karta.Obrazek %}
                                             <span class="karta-img-wrapper me-3">
                                                 <img class="img-fluid karta-img-default" src="{{ karta.Obrazek.url }}" alt="">
-                                                {% if karta.Obrazek_hover %}
-                                                    <img class="img-fluid karta-img-hover" src="{{ karta.Obrazek_hover.url }}" alt="">
+                                                {% if karta.ObrazekHover %}
+                                                    <img class="img-fluid karta-img-hover" src="{{ karta.ObrazekHover.url }}" alt="">
+                                                {% else %}
+                                                    <img class="img-fluid karta-img-hover" src="{{ karta.Obrazek.url }}" alt="">
                                                 {% endif %}
                                             </span>
                                         {% endif %}
