@@ -1077,3 +1077,7 @@ a:hover .homepage-akce {
         height: 100%;
     }
 }
+
+.footer-links li {
+    margin-bottom: 7px;
+}
