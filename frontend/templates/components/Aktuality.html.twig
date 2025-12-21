@@ -11,7 +11,7 @@
     <div class="margin-component">
         <div class="row">
             {% for aktualita in this.getItems(data.Pocet, data.kategorie) %}
-                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                <div class="col-sm-6 my-3">
                     <a href="{{ path('detail_aktuality', {'slug': aktualita.slug}) }}" class="text-decoration-none">
                         {% if aktualita.Obrazek %}
                             <div class="ratio ratio-4x3 mb-2">
