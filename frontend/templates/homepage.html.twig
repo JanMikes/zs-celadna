@@ -151,7 +151,7 @@
     {% if section %}
         <div class="container pt-3 pb-5 section-content">
             <div class="row">
-                <div class="{{ section.Komponenty_panel ? 'col-md-8' : 'col-md-12' }}">
+                <div class="mb-5 {{ section.Komponenty_panel ? 'col-lg-8 section-with-panel' : 'col-lg-12 section-without-panel' }}">
                     <div class="section-content-wrapper">
                         {% for komponenta in section.Komponenty %}
                             {{ component(komponenta.type, {
