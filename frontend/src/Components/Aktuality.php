@@ -30,4 +30,24 @@ readonly final class Aktuality
 
         return $this->content->getAktualityData(limit: $Pocet, tag: $tagSlugs);
     }
+
+    /**
+     * @param array<TagData> $kategorie
+     * @return array{items: array<AktualitaData>, hasMore: bool}
+     */
+    public function getItemsWithHasMore(int $Pocet, array $kategorie): array
+    {
+        $tagSlugs = [];
+        foreach ($kategorie as $kategorieItem) {
+            $tagSlugs[] = $kategorieItem->slug;
+        }
+
+        $items = $this->content->getAktualityData(limit: $Pocet + 1, tag: $tagSlugs);
+        $hasMore = count($items) > $Pocet;
+
+        return [
+            'items' => array_slice($items, 0, $Pocet),
+            'hasMore' => $hasMore,
+        ];
+    }
 }

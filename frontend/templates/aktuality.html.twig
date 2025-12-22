@@ -16,14 +16,14 @@
     {% if tagy %}
         <p class="tags">
             {% for Tag in tagy %}
-                <a href="{{ path('aktuality_tag_filter', {'tag': Tag.slug}) }}" class="custom-badge me-2 mt-2 {% if Tag.slug == active_tag %}active_tag{% endif %}">
+                <a href="{{ path('aktuality_tag_filter', {'tag': Tag.slug}) }}" class="custom-badge me-2 mb-2 {% if Tag.slug == active_tag %}active_tag{% endif %}">
                     {{ Tag.Tag }}
                 </a>
             {% endfor %}
 
             {% if active_tag %}
                 <br>
-                <a class="ms-2 mt-2" href="{{ path('aktuality') }}">Vymazat filtr</a>
+                <a class="ms-2 mt-b" href="{{ path('aktuality') }}">Vymazat filtr</a>
             {% endif %}
         </p>
     {% endif %}

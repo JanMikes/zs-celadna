@@ -1,16 +1,26 @@
+{% set result = this.getItemsWithHasMore(data.Pocet, data.kategorie) %}
+
 {% if isPanel %}
     <div class="actuality-panel margin-component">
-        {% for aktualita in this.getItems(data.Pocet, data.kategorie) %}
+        {% for aktualita in result.items %}
             <a href="{{ path('detail_aktuality', {'slug': aktualita.slug}) }}" class="text-decoration-none">
                 <h3 class="h5 mb-1 fw-bold {{ loop.first == false ? 'mt-3' : 'mt-0' }}">{{ aktualita.Nadpis }}</h3>
                 <time class="small text-secondary">{{ aktualita.DatumZverejneni|date('d.m.Y') }}</time>
             </a>
         {% endfor %}
+
+        {% if result.hasMore %}
+            {% if data.kategorie|length == 1 %}
+                <a href="{{ path('aktuality_tag_filter', {'tag': data.kategorie[0].slug}) }}" class="mt-3 d-inline-block">Zobrazit více</a>
+            {% else %}
+                <a href="{{ path('aktuality') }}" class="mt-3 d-inline-block">Zobrazit více</a>
+            {% endif %}
+        {% endif %}
     </div>
 {% else %}
     <div class="margin-component">
         <div class="row">
-            {% for aktualita in this.getItems(data.Pocet, data.kategorie) %}
+            {% for aktualita in result.items %}
                 <div class="col-sm-6 my-3">
                     <a href="{{ path('detail_aktuality', {'slug': aktualita.slug}) }}" class="text-decoration-none">
                         {% if aktualita.Obrazek %}
@@ -25,5 +35,15 @@
                 </div>
             {% endfor %}
         </div>
+
+        {% if result.hasMore %}
+            <div class="text-center mt-3">
+                {% if data.kategorie|length == 1 %}
+                    <a href="{{ path('aktuality_tag_filter', {'tag': data.kategorie[0].slug}) }}" class="btn btn-outline-primary">Zobrazit více</a>
+                {% else %}
+                    <a href="{{ path('aktuality') }}" class="btn btn-outline-primary">Zobrazit více</a>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
 {% endif %}
