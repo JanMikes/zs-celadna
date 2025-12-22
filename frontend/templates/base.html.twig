@@ -76,9 +76,17 @@
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav">
+                <div class="d-block d-lg-none">
+                    <ul class="navbar-nav">
+                        <twig:Menu type="navbar" />
+                    </ul>
+
+                    <hr>
+                </div>
+
+                <ul class="navbar-nav">
                   <twig:Menu type="sidebar" />
-              </ul>
+                </ul>
             </div>
           </div>
         </header>
