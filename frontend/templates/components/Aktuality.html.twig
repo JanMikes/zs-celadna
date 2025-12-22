@@ -37,11 +37,11 @@
         </div>
 
         {% if result.hasMore %}
-            <div class="text-center mt-3">
+            <div class="mt-3">
                 {% if data.kategorie|length == 1 %}
-                    <a href="{{ path('aktuality_tag_filter', {'tag': data.kategorie[0].slug}) }}" class="btn btn-outline-primary">Zobrazit více</a>
+                    <a href="{{ path('aktuality_tag_filter', {'tag': data.kategorie[0].slug}) }}" class="d-inline-block my-2 button-style-1">Zobrazit více</a>
                 {% else %}
-                    <a href="{{ path('aktuality') }}" class="btn btn-outline-primary">Zobrazit více</a>
+                    <a href="{{ path('aktuality') }}" class="d-inline-block my-2 button-style-1">Zobrazit více</a>
                 {% endif %}
             </div>
         {% endif %}
