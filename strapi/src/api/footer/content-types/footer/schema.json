@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Pati\u010dka webu"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Kontakty_sloupec_1": {
+      "type": "richtext"
+    },
+    "Kontakty_sloupec_2": {
+      "type": "richtext"
+    }
+  }
+}

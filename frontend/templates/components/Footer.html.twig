@@ -1,0 +1,15 @@
+{% set footer = this.footerData %}
+{% if footer %}
+    <div class="row">
+        {% if footer.Kontakty_sloupec_1 %}
+            <div class="col-md-6 mb-3">
+                {{ footer.Kontakty_sloupec_1|markdown_to_html|newlines }}
+            </div>
+        {% endif %}
+        {% if footer.Kontakty_sloupec_2 %}
+            <div class="col-md-6 mb-3">
+                {{ footer.Kontakty_sloupec_2|markdown_to_html|newlines }}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

@@ -533,6 +533,35 @@ export interface ApiBocniPanelBocniPanel extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'Pati\u010Dka webu';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Kontakty_sloupec_1: Schema.Attribute.RichText;
+    Kontakty_sloupec_2: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFormularFormular extends Struct.CollectionTypeSchema {
   collectionName: 'formulars';
   info: {
@@ -1508,6 +1537,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::aktuality.aktuality': ApiAktualityAktuality;
       'api::bocni-panel.bocni-panel': ApiBocniPanelBocniPanel;
+      'api::footer.footer': ApiFooterFooter;
       'api::formular.formular': ApiFormularFormular;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::ikonky.ikonky': ApiIkonkyIkonky;

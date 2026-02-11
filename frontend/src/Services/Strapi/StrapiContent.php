@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace CeladnaZS\Web\Services\Strapi;
 
+use CeladnaZS\Web\Value\Content\Data\FooterData;
 use CeladnaZS\Web\Value\Content\Data\HomepageData;
 use CeladnaZS\Web\Value\Content\Data\KalendarAkciData;
 use Psr\Clock\ClockInterface;
@@ -27,6 +28,7 @@ use CeladnaZS\Web\Value\Content\Data\TagData;
  * @phpstan-import-type ImageDataArray from ImageData
  * @phpstan-import-type MenuDataArray from MenuData
  * @phpstan-import-type SekceDataArray from SekceData
+ * @phpstan-import-type FooterDataArray from FooterData
  * @phpstan-import-type HomepageDataArray from HomepageData
  * @phpstan-import-type TagDataArray from TagData
  * @phpstan-import-type UredniDeskaDataArray from UredniDeskaData
@@ -289,5 +291,17 @@ readonly final class StrapiContent
         return KalendarAkciData::createFromStrapiResponse(
             $strapiResponse['data'][0] ?? throw new NotFound
         );
+    }
+
+    public function getFooterData(): FooterData|null
+    {
+        try {
+            /** @var array{data: FooterDataArray} $strapiResponse */
+            $strapiResponse = $this->strapiClient->getApiResource('footer');
+
+            return FooterData::createFromStrapiResponse($strapiResponse['data']);
+        } catch (\Throwable) {
+            return null;
+        }
     }
 }
