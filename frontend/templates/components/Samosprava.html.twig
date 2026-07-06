@@ -1,6 +1,6 @@
 <div class="margin-component">
     <div class="row g-3">
-        {% for clovekSamospravy in data.lide %}
+        {% for clovekSamospravy in data.lide|filter(clovekSamospravy => clovekSamospravy.clovek) %}
             <div class="my-3 {% if hasPanel %}col-xl-6{% else %}col-md-6 col-xl-4{% endif %}">
                 <div class="d-flex align-items-start">
                     {% if clovekSamospravy.clovek.Fotka %}
