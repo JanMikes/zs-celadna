@@ -1,13 +1,15 @@
 <div class="row gx-3 margin-component">
     {% for obrazek in data.Obrazek %}
-        <div class="col {% if data.Obrazek|length > 1 %}d-flex justify-content-center align-items-center{% endif %}">
-            {% if obrazek.Odkaz %}
-                <twig:Odkaz data="{{ obrazek.Odkaz }}">
+        {% if obrazek.Obrazek %}
+            <div class="col {% if data.Obrazek|length > 1 %}d-flex justify-content-center align-items-center{% endif %}">
+                {% if obrazek.Odkaz %}
+                    <twig:Odkaz data="{{ obrazek.Odkaz }}">
+                        <img class="img-fluid" src="{{ obrazek.Obrazek.url }}">
+                    </twig:Odkaz>
+                {% else %}
                     <img class="img-fluid" src="{{ obrazek.Obrazek.url }}">
-                </twig:Odkaz>
-            {% else %}
-                <img class="img-fluid" src="{{ obrazek.Obrazek.url }}">
-            {% endif %}
-        </div>
+                {% endif %}
+            </div>
+        {% endif %}
     {% endfor %}
 </div>
